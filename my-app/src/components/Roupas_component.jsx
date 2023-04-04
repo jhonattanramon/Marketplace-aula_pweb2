@@ -11,61 +11,64 @@ const Roupas_component = ({produtos, setProps}) => {
             return
         }
 
-        
-        
+    
+    
+         const RenderCard = (index) =>{
 
-        const BaseCard = () => {
-
-            return(
-
-                
-                
-            <section className="sectionContainer">
-
-                <div>
-                <img className="img" src={produtos.roupas[0].imagem} alt="" />    
+            let i = index
+            console.log(i);
+                return(
+                    <section className="sectionContainer">
+                    
+                    <div>
+                    <img className="img" src={produtos.roupas[i].imagem} alt="" />    
                 </div>  
-
-                    <div className="divDescription">
+                
+                <div className="divDescription">
                 <div>
-                    {produtos.roupas[0].nome}
-                </div>
-                <div>
+                    {produtos.roupas[i].nome}
+                    </div>
+                    <div>
                     <span>
-                        <span>
-                            R$:
-                        </span>
-                    {produtos.roupas[0].preco}
+                    <span>
+                    R$:
+                    </span>
+                    {produtos.roupas[i].preco}
                     </span>
                     
-
-                </div>
-
-                <div> 
-                <button onClick={ () => { 
-
-                        setProps(produtos.roupas[0].id)
                     
-                }} >adicionar favoritos</button>
-                </div>
+                    </div>
+                    
+                    <div> 
+                    <button onClick={ () => { 
+                        
+                        setProps(produtos.roupas[i].id)
+                        
+                    }} >adicionar favoritos</button>
+                    </div>
                     </div>  
-            </section>
-    )
+                    </section>
+                )
+            }
 
-    }
+            let arrayDeComponent = []
+
+
+            for (let i = 0; i < produtos.roupas.length; i++) {
+                
+                arrayDeComponent.push(<RenderCard index={i} />)
+            }
+        
+            console.log(arrayDeComponent);
+                 
 
 
     return(
+
         <div style={{overflowY: 'scroll' , background:'blue', height:'100%', width: 400}}>
 
          
-
-
-          <BaseCard /> 
-          <BaseCard />
-        
-         
-
+            {arrayDeComponent.map( (i) => i )}
            
    
 
