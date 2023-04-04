@@ -38,7 +38,7 @@ const Roupas_component = ({produtos, setProps, PropFavoritos}) => {
                 <div> 
                 <button onClick={ () => { 
 
-                    setProps( [...PropFavoritos, ])
+                    setProps( [...PropFavoritos, produtos.roupas[Number(id)]])
                     
                 }} >adicionar favoritos</button>
                 </div>

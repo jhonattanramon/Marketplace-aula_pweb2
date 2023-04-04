@@ -1,7 +1,7 @@
 
-const Favoritos_component = (props) => {
+const Favoritos_component = ({favoritos}) => {
 
-        console.log(props);
+        console.log(favoritos);
 
         const BaseDeFavoritos = () => {
 
@@ -9,7 +9,7 @@ const Favoritos_component = (props) => {
             <section>
 
             <div>
-                <img src="" alt="" />
+                <img src={favoritos} alt="" />
             </div>
 
             <div> </div>
@@ -22,6 +22,21 @@ const Favoritos_component = (props) => {
         <div>
             <div>
 
+                {favoritos.map( ({imagem, nome,descricao, preco, id}) => {
+
+                    return(
+
+                        <section>
+
+                        <div>
+                            <img src={imagem} alt="" />
+                        </div>
+            
+                        <div> {nome} </div>
+                        </section>
+                    )
+
+                })}
 
                 
             </div>
