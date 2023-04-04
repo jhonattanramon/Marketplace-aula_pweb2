@@ -19,6 +19,8 @@ function App() {
 
   const [favoritos, setFavoritos] = useState([]);
 
+  console.log(favoritos);
+
   useEffect(() => {
    const load = async () => {
 
@@ -62,7 +64,7 @@ function App() {
       </div>
 
       <div className='box'>
-      <Roupas_component produtos={produtos} setProps={setFavoritos}/>
+      <Roupas_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
       </div>
     </div>
 
