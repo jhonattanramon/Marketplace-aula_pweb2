@@ -60,7 +60,7 @@ function App() {
     <div className="box-container">
 
       <div className='box'>
-      <Jogos_component produtos={produtos}/>
+      <Jogos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
       </div>
 
       <div className='box'>
@@ -69,7 +69,7 @@ function App() {
     </div>
 
     <div className='box2'>
-    <Sapatos_component produtos={produtos}  />
+    <Sapatos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos} />
     </div>
 
    
