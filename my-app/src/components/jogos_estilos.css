@@ -1,0 +1,22 @@
+
+.jogo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jogo img {
+width: 200px;
+}
+.jogo p{
+    font-size: 0.5em;
+}
+#geral{
+    width: 100%;
+    height: 100%;
+    display: flex;
+   flex-flow:row wrap;
+    gap: 10;
+    overflow: auto;
+}

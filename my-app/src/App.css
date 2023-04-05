@@ -13,6 +13,7 @@
 .box{
   border: 1px solid gray;
 <<<<<<< HEAD
+<<<<<<< HEAD
   flex: 1;
   display: flex;
   justify-content: center;
@@ -23,6 +24,12 @@
   height: 400px;
   background-color: red;
 >>>>>>> parent of 52c69d8 (Merge pull request #4 from jhonattanramon/David/Jefferson)
+=======
+  width: 400px;
+  height: 400px;
+
+
+>>>>>>> parent of cceaa74 (.)
 }
 
 .box2{
@@ -33,8 +40,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
+.box2::-webkit-scrollbar{
+ 
+  background-color: none;
+  height: 7px;
+}
+
+
+.box2::-webkit-scrollbar-track {
+  height: 5px;
+  background:none;        /* color of the tracking area */
+}
+.box2::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: white;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: none ;
+   /* creates padding around scroll thumb */
+}
 .box-container{
   border: 1px solid gray;
   display: flex;
