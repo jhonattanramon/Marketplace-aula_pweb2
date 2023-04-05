@@ -19,8 +19,6 @@ function App() {
 
   const [favoritos, setFavoritos] = useState([]);
 
-  console.log(favoritos);
-
   useEffect(() => {
    const load = async () => {
 
@@ -43,33 +41,33 @@ function App() {
    load();
   },[]);
 
- 
+  console.log(produtos);
 
   
   return (
     <div className="App">
 
       <div className='box2'>
-        <Favoritos_component favoritos={favoritos} />
+        <Favoritos_component />
       </div>
 
       <div className='box2'>
-    <Filmes_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+    <Filmes_component produtos={produtos}/>
       </div>
 
     <div className="box-container">
 
       <div className='box'>
-      <Jogos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+      <Jogos_component produtos={produtos}/>
       </div>
 
       <div className='box'>
-      <Roupas_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+      <Roupas_component produtos={produtos}/>
       </div>
     </div>
 
     <div className='box2'>
-    <Sapatos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos} />
+    <Sapatos_component produtos={produtos}  />
     </div>
 
    
