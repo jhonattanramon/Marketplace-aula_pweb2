@@ -9,6 +9,7 @@ import Jogos_component from './components/Jogos_Component';
 import Roupas_component from './components/Roupas_component';
 import Sapatos_component from './components/Sapatos_component';
 import Favoritos_component from './components/Favoritos_component';
+import Bebidas_component from './components/Bebidas_component';
 
 
 function App() {
@@ -26,13 +27,15 @@ function App() {
     const filmes = await (await fetch('https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes')).json();
     const jogos = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/jogos')).json()
     const sapatos = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos')).json()
+    const bebidas = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas')).json()
     
    
     const ObjProdutos = {
       roupas: roupas,
       filmes: filmes,
       jogos: jogos,
-      sapatos: sapatos 
+      sapatos: sapatos, 
+      bebidas: bebidas,
     }
    
     setProdutos(ObjProdutos);
@@ -68,6 +71,10 @@ function App() {
 
     <div className='box2'>
     <Sapatos_component produtos={produtos}  />
+    </div>
+
+    <div className='box2'>
+    <Bebidas_component produtos={bebidas}  />
     </div>
 
    
