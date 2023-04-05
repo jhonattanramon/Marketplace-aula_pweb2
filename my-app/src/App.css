@@ -12,9 +12,12 @@
 
 .box{
   border: 1px solid gray;
+
+
   width: 400px;
   height: 400px;
   background-color: red;
+
 }
 
 .box2{
