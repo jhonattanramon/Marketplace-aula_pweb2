@@ -1,10 +1,7 @@
 import './jogos_estilos.css'
 
 const Jogos_component = (props) => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
+
     if (props.produtos.length === 0) {
         return
     }
@@ -139,30 +136,6 @@ setProps( [...props.PropFavoritos, props.produtos.jogos[0]])
  
 
 
-    
-
->>>>>>> parent of cceaa74 (.)
-
- 
-
-
-    if (props.produtos.length === 0 ) {
-      return  
-    }
-
->>>>>>> parent of 52c69d8 (Merge pull request #4 from jhonattanramon/David/Jefferson)
-
-<<<<<<< HEAD
-    return(
-        <div>
-<<<<<<< HEAD
-             <div>pr</div>
-=======
-             
->>>>>>> parent of 52c69d8 (Merge pull request #4 from jhonattanramon/David/Jefferson)
-        </div>
-=======
->>>>>>> parent of cceaa74 (.)
     )
 }
 
