@@ -5,15 +5,15 @@ const Favoritos_component = ({favoritos}) => {
 
         
     return(
-        <div>
-            <div style={{flex:1, display:'flex', gap: 10}}>
+       
+            <div style={{flex:1, display:'flex', gap: 10,  }}>
 
                 {favoritos.map( ({imagem, nome,descricao, preco, id}) => {
 
                     return(
 
                         <section style={{
-                            flex:1,
+                         
                             background:'white',
                             width: 200,
                             height:250,
@@ -59,7 +59,7 @@ const Favoritos_component = ({favoritos}) => {
 
                 
             </div>
-        </div>
+      
     )
 }
 
