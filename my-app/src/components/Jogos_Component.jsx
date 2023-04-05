@@ -69,6 +69,17 @@ const Jogos_component = (props) => {
             </div>
 
 
+ 
+
+
+    if (props.produtos.length === 0 ) {
+      return  
+    }
+
+
+
+    return(
+        <div>
 
         </div>
     )

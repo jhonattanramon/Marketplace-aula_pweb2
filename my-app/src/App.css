@@ -12,13 +12,12 @@
 
 .box{
   border: 1px solid gray;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 450px;
- 
+
+
+  width: 400px;
+  height: 400px;
+  background-color: red;
+
 }
 
 .box2{
@@ -29,8 +28,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
+.box2::-webkit-scrollbar{
+ 
+  background-color: none;
+  height: 7px;
+}
+
+
+.box2::-webkit-scrollbar-track {
+  height: 5px;
+  background:none;        /* color of the tracking area */
+}
+.box2::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: white;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: none ;
+   /* creates padding around scroll thumb */
+}
 .box-container{
   border: 1px solid gray;
   display: flex;
