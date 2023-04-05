@@ -1,7 +1,7 @@
 
 const Jogos_component = (props) => {
 
-    console.log(props);
+ 
 
 
     if (props.produtos.length === 0 ) {
@@ -11,7 +11,7 @@ const Jogos_component = (props) => {
 
     return(
         <div>
-             <div>{props.produtos.jogos[0].nome}</div>
+             
         </div>
     )
 }

@@ -54,7 +54,7 @@ function App() {
       </div>
 
       <div className='box2'>
-    <Filmes_component produtos={produtos}/>
+    <Filmes_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
       </div>
 
     <div className="box-container">
