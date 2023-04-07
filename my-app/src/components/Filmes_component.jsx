@@ -5,7 +5,9 @@ const Filmes_component = () => {
     return(
 
         <div>
-         <div></div>
+         
+      <div></div>
+         
         </div>
     )
 }

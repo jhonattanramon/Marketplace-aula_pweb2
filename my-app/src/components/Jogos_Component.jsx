@@ -1,10 +1,10 @@
 
-const Jogos_component = (props) => {
+const Jogos_component = () => {
 
 
     return(
         <div>
-             <div>pr</div>
+             <div></div>
         </div>
     )
 }
