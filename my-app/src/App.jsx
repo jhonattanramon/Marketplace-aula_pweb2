@@ -74,7 +74,7 @@ function App() {
     </div>
 
     <div className='box2'>
-    <Bebidas_component produtos={bebidas}  />
+    <Bebidas_component produtos={produtos}  />
     </div>
 
    
