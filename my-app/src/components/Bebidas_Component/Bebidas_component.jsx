@@ -13,7 +13,7 @@ const Bebidas_component = (props) => {
   <div className="card1" key={bebida.id}>
       <img src={bebida.imagem} alt="logo das marcas"/>
         <p>{bebida.nome}</p>
-        <p>{bebida.descricao}</p>
+        <p>{bebida.descric.ao}</p>
         <p>{bebida.preco}</p>
   </div>
 ))}
