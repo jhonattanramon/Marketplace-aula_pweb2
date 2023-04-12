@@ -37,8 +37,9 @@ function App() {
         await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos")
       ).json();
       const bebidas = await (
-        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas")
-      ).json();
+        await fetch('https://642dbef1bf8cbecdb40df741.mockapi.io/bebidas')
+        ).json()
+
 
       const ObjProdutos = {
         roupas: roupas,
