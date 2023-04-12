@@ -8,6 +8,7 @@ const Filmes_component = (props) => {
 
   return (
     <div className="div">
+      
       <div className="card">
         <img className="img" src={props.produtos.filmes[0].imagem} />
         <div>{props.produtos.filmes[0].nome}</div>

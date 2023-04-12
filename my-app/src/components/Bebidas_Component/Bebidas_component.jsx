@@ -13,13 +13,13 @@ const Bebidas_component = (props) => {
    
 
 
-<div className="card">
+<div className="cardBebidas">
 
 {props.produtos.bebidas.map((bebida) =>{
 
     
     
-    return <div className="card1" key={bebida.id}>
+    return <div className="cardBebidas1" key={bebida.id}>
       <img src={bebida.imagem} alt="logo das marcas"/>
         <p>{bebida.nome}</p>
         <p>{bebida.descricao}</p>
