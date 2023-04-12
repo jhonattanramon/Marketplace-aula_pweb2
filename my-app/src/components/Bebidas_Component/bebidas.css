@@ -8,6 +8,8 @@
 .cardBebidas1{
   gap: 5px;
   font-size: 16px;
+  justify-content: space-around;
+    padding: 10px 0px;
 }
 
 .cardBebidas img {
