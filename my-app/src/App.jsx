@@ -9,8 +9,13 @@ import Jogos_component from "./components/Jogos_Component/Jogos_Component";
 import Roupas_component from "./components/Roupas_componet/Roupas_component";
 import Sapatos_component from "./components/Sapatos_Component/Sapatos_component";
 import Bebidas_component from "./components/Bebidas_Component/Bebidas_component";
+<<<<<<< Updated upstream
 import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
 import Denuncia_component from './components/Denuncia_component.s/Denuncia_component';
+=======
+import Carros_component from "./components/Carros_component/Carros_component";
+
+>>>>>>> Stashed changes
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -38,9 +43,17 @@ function App() {
         await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos")
       ).json();
       const bebidas = await (
+<<<<<<< Updated upstream
         await fetch('https://642dbef1bf8cbecdb40df741.mockapi.io/bebidas')
         ).json()
 
+=======
+        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas")
+      ).json();
+      const carros = await (
+        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas")
+      ).json();
+>>>>>>> Stashed changes
 
       const ObjProdutos = {
         roupas: roupas,
@@ -48,6 +61,7 @@ function App() {
         jogos: jogos,
         sapatos: sapatos,
         bebidas: bebidas,
+        carros: carros,
       };
 
       setProdutos(ObjProdutos);
@@ -101,7 +115,17 @@ function App() {
       </div>
 
       <div className="box2">
-        <Bebidas_component produtos={produtos} />
+        <Bebidas_component
+          produtos={produtos}
+          setProps={setFavoritos}
+         PropFavoritos={produtos} />
+      </div>
+
+        <div className="box2">
+        <Carros_component 
+         produtos={produtos}
+         setProps={setFavoritos}
+        PropFavoritos={produtos} />
       </div>
     </div>
   );
