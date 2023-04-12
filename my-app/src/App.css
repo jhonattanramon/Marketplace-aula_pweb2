@@ -12,32 +12,34 @@
 
 .box{
   border: 1px solid gray;
-
-
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
- 
-
   width: 400px;
   height: 400px;
-  
 
- 
+}
 
-
+.box img{
+  object-fit: cover;
 }
 
 .box2{
   border: 1px solid mediumpurple;
-  flex: 1;
+  height: 300px;
   width: 100%;
   margin: 0px 1px;
-  display: flex;
   justify-content: center;
   align-items: center;
   overflow: auto;
+
+}
+.box2 img{
+  width: 130px;
+  height: 100%;
+  object-fit: contain;
+  
 }
 
 .box2::-webkit-scrollbar{

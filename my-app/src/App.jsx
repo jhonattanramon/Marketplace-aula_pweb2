@@ -4,83 +4,100 @@ import { useEffect, useState } from 'react';
 
 //component
 
-import Filmes_component from './components/Filmes_component';
-import Jogos_component from './components/Jogos_Component';
-import Roupas_component from './components/Roupas_component';
-import Sapatos_component from './components/Sapatos_component';
-import Favoritos_component from './components/Favoritos_component';
-import Bebidas_component from './components/Bebidas_component';
-
+import Filmes_component from "./components/Filmes_Component/Filmes_component";
+import Jogos_component from "./components/Jogos_Component/Jogos_Component";
+import Roupas_component from "./components/Roupas_componet/Roupas_component";
+import Sapatos_component from "./components/Sapatos_Component/Sapatos_component";
+import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
+import Bebidas_component from "./components/Bebidas_Component/Bebidas_component";
 
 function App() {
-
   const [produtos, setProdutos] = useState([]);
- 
-
 
   const [favoritos, setFavoritos] = useState([]);
 
-  console.log(favoritos);
+  const [denunciados, setDenunciados] = useState([]);
+
+  const addDenunciados = (produto) => {
+    console.log(produto);
+  };
 
   useEffect(() => {
-   const load = async () => {
+    const load = async () => {
+      const roupas = await (
+        await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas")
+      ).json();
+      const filmes = await (
+        await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes")
+      ).json();
+      const jogos = await (
+        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/jogos")
+      ).json();
+      const sapatos = await (
+        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos")
+      ).json();
+      const bebidas = await (
+        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas")
+      ).json();
 
-    const roupas = await (await fetch('https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas')).json();
-    const filmes = await (await fetch('https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes')).json();
-    const jogos = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/jogos')).json()
-    const sapatos = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos')).json()
-    const bebidas = await (await fetch('https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas')).json()
-    
-   
-    const ObjProdutos = {
-      roupas: roupas,
-      filmes: filmes,
-      jogos: jogos,
-      sapatos: sapatos, 
-      bebidas: bebidas,
-    }
-   
-    setProdutos(ObjProdutos);
-   
-   }
-   load();
-  },[]);
+      const ObjProdutos = {
+        roupas: roupas,
+        filmes: filmes,
+        jogos: jogos,
+        sapatos: sapatos,
+        bebidas: bebidas,
+      };
 
- 
+      setProdutos(ObjProdutos);
+    };
+    load();
+  }, []);
 
-  
   return (
     <div className="App">
-
-      <div className='box2'>
-        <Favoritos_component favoritos={favoritos} />
+      <div className="box2">
+        <Favoritos_component favoritos={favoritos} setProps={setFavoritos} />
       </div>
 
-      <div className='box2'>
-    <Filmes_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+      <div className="box2">
+        <Filmes_component
+          produtos={produtos}
+          PropFavoritos={favoritos}
+          setProps={setFavoritos}
+          onAddDenuncia={addDenunciados}
+        />
       </div>
 
-    <div className="box-container">
+      <div className="box-container">
+        <div className="box">
+          <Jogos_component
+            produtos={produtos}
+            setProps={setFavoritos}
+            PropFavoritos={favoritos}
+          />
+        </div>
 
-      <div className='box'>
-      <Jogos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+        <div className="box">
+          <Roupas_component
+            produtos={produtos}
+            setProps={setFavoritos}
+            PropFavoritos={favoritos}
+          />
+        </div>
       </div>
 
-      <div className='box'>
-      <Roupas_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos}/>
+      <div className="box2">
+        <Sapatos_component
+          produtos={produtos}
+          setProps={setFavoritos}
+          PropFavoritos={favoritos}
+        />
+      </div>
+
+      <div className="box2">
+        <Bebidas_component produtos={produtos} />
       </div>
     </div>
-
-    <div className='box2'>
-    <Sapatos_component produtos={produtos} setProps={setFavoritos} PropFavoritos={favoritos} />
-    </div>
-
-    <div className='box2'>
-    <Bebidas_component produtos={produtos}  />
-    </div>
-
-   
-</div>
   );
 }
 

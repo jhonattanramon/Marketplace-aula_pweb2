@@ -1,0 +1,14 @@
+.caixaDeSapato{
+    display: flex;
+  
+}
+
+.sapatos{
+    font-size: 13px;
+    text-align: center;
+}
+.sapatos .img{
+    
+   height: 200px;
+
+}
