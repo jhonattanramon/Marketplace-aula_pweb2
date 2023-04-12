@@ -109,7 +109,7 @@ function App() {
         />
       </div>
 
-      <div className="box2">
+      <div className="box4">
         <Bebidas_component
           produtos={produtos}
           setProps={setFavoritos}

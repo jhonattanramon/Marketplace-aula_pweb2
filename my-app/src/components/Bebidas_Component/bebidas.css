@@ -1,19 +1,9 @@
-.cardBebidas {
-  border-style: solid;
-  padding: 1px;
+.containerBebidas {
   display: flex;
-  justify-content: space-around;
-  padding: 10px 0px;
-
 }
+
 
 .cardBebidas1{
-  gap: 5px;
-  font-size: 16px;
-
-}
-
-.cardBebidas img {
   width: 100px;
   height: 100px;
 }
