@@ -29,6 +29,7 @@ function App() {
     const load = async () => {
       const roupas = await (
         await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas")
+
       ).json();
       const filmes = await (
         await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes")
@@ -44,7 +45,9 @@ function App() {
 
       ).json();
       const carros = await (
-        await fetch("https://642dbef1bf8cbecdb40df741.mockapi.io/bebidas")
+        await fetch("https://6436eb343e4d2b4a12df1a39.mockapi.io/carros")
+        
+
       ).json();
 
       const ObjProdutos = {
