@@ -4,7 +4,7 @@ import Filter_Component from "./Filter_component";
 
 const Favoritos_component = ({favoritos, setProps}) => {
 
-        console.log(favoritos, setProps);
+       
 
 
         const [filter, setFilter] = useState()
@@ -12,13 +12,12 @@ const Favoritos_component = ({favoritos, setProps}) => {
         
     return(
         <section style={{display:'flex', flexDirection:'column', flex:1, background:'red', height:'100%'}}> 
-            <div style={{display:'flex',  justifyContent:'center' , alignItems:'center'}}>
+            <div style={{ }}>
 
-                    <div style={{textAlign:'center'}}>FAVORITOS </div>
-                    <div style={{position:'relative', left:'35%'}}> 
-
+                    <span style={{display:'block', textAlign:'center'}}>FAVORITOS </span>
+                    <span style={{position:'relative', left:'75%'}}> 
                         <Filter_Component favoritos={favoritos} setProps = {setProps}/>
-                    </div> 
+                    </span> 
         
                  
             </div>

@@ -3,7 +3,7 @@
 const Filter_Component = ({favoritos, setProps}) => {
 
 
-    console.log(setProps);
+  
     
 
     return(
