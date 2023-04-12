@@ -24,6 +24,8 @@ console.log(props)
         <p>{bebida.nome}</p>
         <p>{bebida.descricao}</p>
         <p>{bebida.preco}</p>
+        <button>Favoritar</button>
+        <button>Adicionar</button>
   </div>
 }
 
