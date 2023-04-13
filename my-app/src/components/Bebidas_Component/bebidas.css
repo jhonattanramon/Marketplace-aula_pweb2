@@ -1,10 +1,10 @@
 .containerBebidas {
   display: flex;
-  text-align: center;
-  gap: 10px;
+gap: 150px;
   margin-top: 10px;
   margin-bottom: 10px;
-  
+  font-family: Arial;
+
 }
 
 .cardBebidas {
@@ -12,16 +12,20 @@
 
   height: 100%;
   
-
   font-size: 16px;
 }
 
 .cardH3{
   color: rgb(255, 255, 255);
+  flex-direction:column;
+  text-align: left;
 
   background-color: 	#484d50;
 }
+.cardInfo {
+  text-align: right;
 
+}
 .cardBebidas1{
   width: 150px;
   height: 150px;
@@ -31,41 +35,39 @@
 
 
 
-.cardButtonFav {
+
+
+
+
+.buttonFav {
+  border-style: solid 1px;
   background: #dee046fd;
-
-
-border-style: none;
+  font-size: 16px;
+font-weight: bolder;
+width: 100%;
 color: white;
+cursor: pointer;
 
-font-size: 16px;
+}
+
+.buttonDen {
+  border-style: solid 1px;
+  background-color: #dd0c0c;
+  font-size: 16px;  
 font-weight: bolder;
+width: 100%;
+color: white;
+cursor: pointer;
 }
 
-.fav {
-  background-color:  #dee046fd;
-
+.buttonDen:hover {
+  background-color: #0056b3; /* nova cor de fundo do botão no hover */
 }
 
-.den {
-  background-color:   #dd0c0c;
-  width: 100%;
- 
+.buttonFav:hover {
+  background-color: #0056b3; /* nova cor de fundo do botão no hover */
 }
 
-.cardButtonAdd {
-  background: #dd0c0c;
-
-  color: white;
-
- 
-  border-style: none;
-
-font-size: 16px;
-font-weight: bolder;
-
-
-}
 
 h3{
   margin: 0px;

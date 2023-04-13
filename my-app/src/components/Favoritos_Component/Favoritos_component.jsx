@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filter_Component from "./Filter_component";
 
-const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
-
+const Favoritos_component = ({ favoritos }) => {
   const soma = favoritos.reduce(
     (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
     0
@@ -10,18 +9,22 @@ const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
 
   const [valorDigitado, setValorDigitado] = useState(' ');
 
-  const [filtrados, setFiltrados] = useState(favoritos)
+  const [filtrados, setFiltrados] = useState(favoritos);
 
   const filtrarMenoresValores = () => {
-    if (valorDigitado === '') {
+    if (valorDigitado !== "") {
+      const valoresFiltrados = favoritos.filter(
+        ({ preco }) => preco <= valorDigitado
+      );
+      setFiltrados(valoresFiltrados);
+    } else {
       setFiltrados(favoritos);
-      } else {
-    const valoresFiltrados = favoritos.filter(({ preco }) => preco <= valorDigitado);
-    setFiltrados(valoresFiltrados);
-      }
+    }
   };
 
- 
+  useEffect(() => {
+    filtrarMenoresValores();
+  }, [favoritos]);
 
   return (
     <section
@@ -43,28 +46,24 @@ const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
         <div style={{ textAlign: "center" }}>FAVORITOS </div>
         <div style={{ textAlign: "center" }}> -SOMA: {soma}</div>
 
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-        <input
-          placeholder="Filtrar"
-          type="number"
-          name=""
-          id=""
-          value={valorDigitado}
-          onChange={({ target }) => setValorDigitado(target.value)}
-          onBlur={filtrarMenoresValores}
-        />
-        <img
-          style={{ width: '20px', height: '20px' }}
-          src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
-          alt=""
-        />
-      </div>
-
-        <div style={{ position: "relative", left: "30%" }}>
-          
-
-
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <input
+            placeholder="Filtrar"
+            type="number"
+            name=""
+            id=""
+            value={valorDigitado}
+            onChange={({ target }) => setValorDigitado(target.value)}
+            onBlur={filtrarMenoresValores}
+          />
+          <img
+            style={{ width: "20px", height: "20px" }}
+            src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
+            alt=""
+          />
         </div>
+
+        <div style={{ position: "relative", left: "30%" }}></div>
       </div>
 
       <div style={{ display: "flex", gap: 10 }}>
@@ -81,6 +80,7 @@ const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
                 color: "black",
                 padding: 10,
               }}
+              key={id}
             >
               <div style={{ width: 200, height: 200 }}>
                 <img
@@ -102,8 +102,7 @@ const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
                   textAlign: "center",
                 }}
               >
-                <div>{nome}</div>
-
+                <div>{nome}</div>1
                 <div>
                   <strong style={{ color: "green", fontSize: 12 }}>
                     <span> R$</span>

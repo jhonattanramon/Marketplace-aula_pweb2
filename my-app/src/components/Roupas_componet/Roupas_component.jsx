@@ -1,9 +1,11 @@
 import "./roupas.css";
 
-const Roupas_component = ({ produtos, setProps, PropFavoritos }) => {
+const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavoritos }) => {
   if (produtos.length === 0) {
     return;
   }
+
+  
 
   return (
     <div
@@ -34,13 +36,17 @@ const Roupas_component = ({ produtos, setProps, PropFavoritos }) => {
               <div>
                 <button
                   onClick={() => {
-                    ([
-                      ...PropFavoritos,
-                      produtos.roupas[Number(id) - 1],
-                    ]);
+
+                    console.log(produtos.roupas[Number(id)- 1]);
+                    onAddFavoritos( produtos.roupas[Number(id) - 1])
                   }}
                 >
-                  adicionar favoritos
+                  Adicionar Favoritos
+                </button>
+                <button onClick={() => {
+                  onAddDenuncia(produtos.roupas[Number(id) - 1])
+                }}>
+                  Denunciar
                 </button>
               </div>
             </div>

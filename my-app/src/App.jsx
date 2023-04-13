@@ -32,6 +32,7 @@ function App() {
    
   }
  
+    console.log(favoritos);
   
 
   useEffect(() => {
