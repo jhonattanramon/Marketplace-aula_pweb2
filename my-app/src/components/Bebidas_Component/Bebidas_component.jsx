@@ -34,10 +34,11 @@ const Bebidas_component = (props) => {
                     props.produtos.bebida,
                   ]);
                 }}
-              >FAVORITAR</button>
+              >
+                FAVORITAR
+              </button>
               <br />
             </div>
-
 
             <div className="den">
               <button className="buttonDen">DENUNCIAR</button>
