@@ -83,7 +83,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[4].preco}</div>
         <button
           onClick={() => {
-            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[4]]);
+            props.onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[4]]);
           }}
         >
           adicionar favoritos
@@ -109,7 +109,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[6].preco}</div>
         <button
           onClick={() => {
-            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[6]]);
+            props.onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[6]]);
           }}
         >
           adicionar favoritos
@@ -122,7 +122,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[7].preco}</div>
         <button
           onClick={() => {
-            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[7]]);
+            props.onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[7]]);
           }}
         >
           adicionar favoritos
@@ -135,7 +135,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[8].preco}</div>
         <button
           onClick={() => {
-            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[8]]);
+            props.onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[8]]);
           }}
         >
           adicionar favoritos

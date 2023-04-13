@@ -1,6 +1,6 @@
 import "./roupas.css";
 
-const Roupas_component = ({ produtos, setProps, PropFavoritos }) => {
+const Roupas_component = ({ produtos, setPonrops, PropFavoritos }) => {
   if (produtos.length === 0) {
     return;
   }
@@ -33,12 +33,8 @@ const Roupas_component = ({ produtos, setProps, PropFavoritos }) => {
 
               <div>
                 <button
-                  onClick={() => {
-                    ([
-                      ...PropFavoritos,
-                      produtos.roupas[Number(id) - 1],
-                    ]);
-                  }}
+                 
+           
                 >
                   adicionar favoritos
                 </button>
