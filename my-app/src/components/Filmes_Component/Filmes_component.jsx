@@ -55,7 +55,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[2].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[2]]);
+            props.onAddDenuncia([...props.PropFavoritos, props.produtos.filmes[2]]);
           }}
         >
           adicionar favoritos
@@ -69,7 +69,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[3].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[3]]);
+            props.onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[3]]);
           }}
         >
           adicionar favoritos
@@ -83,7 +83,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[4].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[4]]);
+            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[4]]);
           }}
         >
           adicionar favoritos
@@ -109,7 +109,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[6].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[6]]);
+            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[6]]);
           }}
         >
           adicionar favoritos
@@ -122,7 +122,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[7].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[7]]);
+            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[7]]);
           }}
         >
           adicionar favoritos
@@ -135,7 +135,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[8].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[8]]);
+            onAddFavoritos([...props.PropFavoritos, props.produtos.filmes[8]]);
           }}
         >
           adicionar favoritos

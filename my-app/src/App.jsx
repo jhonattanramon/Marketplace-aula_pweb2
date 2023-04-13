@@ -74,7 +74,9 @@ function App() {
   return (
     <div className="App">
       <div className="box2">
-        <Favoritos_component favoritos={favoritos} />
+        <Favoritos_component 
+        favoritos={favoritos}
+        onAddFavoritos={addFavoritos} />
       </div>
 
       <div className='box2'>
