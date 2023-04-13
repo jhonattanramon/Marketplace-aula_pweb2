@@ -4,6 +4,13 @@ import Filter_Component from "./Filter_component";
 
 const Favoritos_component = ({favoritos, setProps}) => {
 
+    const soma = favoritos.reduce(
+        (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
+        0
+    );
+
+console.log(soma);
+
         console.log(favoritos, setProps);
 
 
@@ -11,11 +18,14 @@ const Favoritos_component = ({favoritos, setProps}) => {
 
         
     return(
-        <section style={{display:'flex', flexDirection:'column', flex:1, background:'red', height:'100%'}}> 
+        <section style={{display:'flex', flexDirection:'column', flex:1, background:'#282c34', height:'100%'}}> 
             <div style={{display:'flex',  justifyContent:'center' , alignItems:'center'}}>
 
                     <div style={{textAlign:'center'}}>FAVORITOS </div>
-                    <div style={{position:'relative', left:'35%'}}> 
+                    <div style={{textAlign:'center'}}>  -SOMA: {soma} 
+
+                    </div>
+                    <div style={{position:'relative', left:'30%'}}> 
 
                         <Filter_Component favoritos={favoritos} setProps = {setProps}/>
                     </div> 
@@ -86,16 +96,11 @@ const Favoritos_component = ({favoritos, setProps}) => {
                 })}
 
                 
-
                 
             </div>
-
-
-           
-
-          
+            
       
-            </section>
+        </section>
     )
 }
 
