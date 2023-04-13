@@ -8,13 +8,10 @@ const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
     0
   );
 
-  const [favorotios_filter, setFavoritos_Filter] = useState([]);
-
   const [valorDigitado, setValorDigitado] = useState(' ');
 
   const [filtrados, setFiltrados] = useState(favoritos)
 
-  console.log(filtrados);
   const filtrarMenoresValores = () => {
     if (valorDigitado === '') {
       setFiltrados(favoritos);
