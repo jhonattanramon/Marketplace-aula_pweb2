@@ -1,8 +1,11 @@
 import "./filmes.css";
 const Filmes_component = (props) => {
+
+
   if (props.produtos.length === 0) {
     return;
   }
+  console.log(props);
 
   const setProps = props.setProps;
 

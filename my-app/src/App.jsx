@@ -26,7 +26,8 @@ function App() {
   };
 
   const addFavoritos = (produtos) => {
-    console.log( [...produtos, produtos]);
+    setFavoritos([...favoritos, produtos])
+   
   }
  
   
@@ -94,6 +95,8 @@ function App() {
           <Jogos_component
             produtos={produtos}
             PropFavoritos={favoritos}
+            onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
           />
         </div>
 
@@ -101,6 +104,8 @@ function App() {
           <Roupas_component
             produtos={produtos}
             PropFavoritos={favoritos}
+            onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
           />
         </div>
       </div>
@@ -109,19 +114,27 @@ function App() {
         <Sapatos_component
           produtos={produtos}
           PropFavoritos={favoritos}
+          onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
         />
       </div>
 
       <div className="box4">
         <Bebidas_component
           produtos={produtos}
-         PropFavoritos={favoritos} />
+         PropFavoritos={favoritos}
+         onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+         />
       </div>
 
         <div className="box2">
         <Carros_component 
          produtos={produtos}
-        PropFavoritos={favoritos} />
+        PropFavoritos={favoritos}
+        onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+        />
       </div>
     </div>
   );
