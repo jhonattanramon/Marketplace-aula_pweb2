@@ -8,8 +8,11 @@ import Filmes_component from "./components/Filmes_Component/Filmes_component";
 import Jogos_component from "./components/Jogos_Component/Jogos_Component";
 import Roupas_component from "./components/Roupas_componet/Roupas_component";
 import Sapatos_component from "./components/Sapatos_Component/Sapatos_component";
-import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
 import Bebidas_component from "./components/Bebidas_Component/Bebidas_component";
+import Carros_component from "./components/Carros_component/Carros_component";
+
+import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
+import Denuncia_component from './components/Denuncia_component.s/Denuncia_component';
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -26,6 +29,7 @@ function App() {
     const load = async () => {
       const roupas = await (
         await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas")
+
       ).json();
       const filmes = await (
         await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes")
@@ -37,7 +41,13 @@ function App() {
         await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos")
       ).json();
       const bebidas = await (
-        await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/bebidas")
+        await fetch("https://642dbef1bf8cbecdb40df741.mockapi.io/bebidas")
+
+      ).json();
+      const carros = await (
+        await fetch("https://6436eb343e4d2b4a12df1a39.mockapi.io/carros")
+        
+
       ).json();
 
       const ObjProdutos = {
@@ -46,6 +56,7 @@ function App() {
         jogos: jogos,
         sapatos: sapatos,
         bebidas: bebidas,
+        carros: carros,
       };
 
       setProdutos(ObjProdutos);
@@ -57,6 +68,10 @@ function App() {
     <div className="App">
       <div className="box2">
         <Favoritos_component favoritos={favoritos} setProps={setFavoritos} />
+      </div>
+
+      <div className='box2'>
+        <Denuncia_component />
       </div>
 
       <div className="box2">
@@ -94,8 +109,18 @@ function App() {
         />
       </div>
 
-      <div className="box2">
-        <Bebidas_component produtos={produtos} />
+      <div className="box4">
+        <Bebidas_component
+          produtos={produtos}
+          setProps={setFavoritos}
+         PropFavoritos={favoritos} />
+      </div>
+
+        <div className="box2">
+        <Carros_component 
+         produtos={produtos}
+         setProps={setFavoritos}
+        PropFavoritos={favoritos} />
       </div>
     </div>
   );

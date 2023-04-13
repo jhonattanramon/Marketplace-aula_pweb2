@@ -1,5 +1,4 @@
- 
- import { useState } from "react";
+import { useState } from "react";
 import Filter_Component from "./Filter_component";
 
 const Favoritos_component = ({favoritos, setProps}) => {
@@ -104,4 +103,4 @@ console.log(soma);
     )
 }
 
-export default Favoritos_component
+export default Favoritos_component;
