@@ -6,7 +6,7 @@ const Sapatos_component = (props) => {
         }
     return(
         <div>
-            
+                
             <div>{props.produtos.sapatos[0].nome}</div>
         </div>
     )
