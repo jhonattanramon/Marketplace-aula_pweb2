@@ -1,13 +1,30 @@
 import { useState } from "react";
 import Filter_Component from "./Filter_component";
 
-const Favoritos_component = ({ favoritos, setProps }) => {
+const Favoritos_component = ({ favoritos, onAddFavoritos }) => {
+
   const soma = favoritos.reduce(
     (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
     0
   );
 
-  const [filter, setFilter] = useState();
+  const [favorotios_filter, setFavoritos_Filter] = useState([]);
+
+  const [valorDigitado, setValorDigitado] = useState(' ');
+
+  const [filtrados, setFiltrados] = useState(favoritos)
+
+  console.log(filtrados);
+  const filtrarMenoresValores = () => {
+    if (valorDigitado === '') {
+      setFiltrados(favoritos);
+      } else {
+    const valoresFiltrados = favoritos.filter(({ preco }) => preco <= valorDigitado);
+    setFiltrados(valoresFiltrados);
+      }
+  };
+
+ 
 
   return (
     <section
@@ -28,13 +45,33 @@ const Favoritos_component = ({ favoritos, setProps }) => {
       >
         <div style={{ textAlign: "center" }}>FAVORITOS </div>
         <div style={{ textAlign: "center" }}> -SOMA: {soma}</div>
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <input
+          placeholder="Filtrar"
+          type="number"
+          name=""
+          id=""
+          value={valorDigitado}
+          onChange={({ target }) => setValorDigitado(target.value)}
+          onBlur={filtrarMenoresValores}
+        />
+        <img
+          style={{ width: '20px', height: '20px' }}
+          src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
+          alt=""
+        />
+      </div>
+
         <div style={{ position: "relative", left: "30%" }}>
-          <Filter_Component favoritos={favoritos} setProps={setProps} />
+          
+
+
         </div>
       </div>
 
       <div style={{ display: "flex", gap: 10 }}>
-        {favoritos.map(({ imagem, nome, descricao, preco, id }) => {
+        {filtrados.map(({ imagem, nome, descricao, preco, id }) => {
           return (
             <section
               style={{
