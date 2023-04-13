@@ -4,7 +4,7 @@ const Bebidas_component = (props) => {
 
 
     if (props.produtos.length === 0) {
-        return
+        return null;
     }
 
   return(
@@ -27,7 +27,8 @@ const Bebidas_component = (props) => {
         </div>
         </div>
    
-        <div className="fav"><button className="buttonFav">FAVORITAR</button> <br /></div>
+        <div className="fav"><button        className="buttonFav"                            onClick={() => {
+          onAddFavoritos([...props.PropFavoritos, props.produtos.bebida]);}}>FAVORITAR</button> <br /></div>
         <div className="den"><button className="buttonDen">DENUNCIAR</button></div>
 
           
