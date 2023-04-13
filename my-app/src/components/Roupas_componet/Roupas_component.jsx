@@ -38,7 +38,7 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
                       produtos.roupas[Number(id) - 1])
                   }}
                 >
-                  adicionar favoritos
+                  Adicionar Favoritos
                 </button>
                 <button onClick={() => {
                   onAddDenuncia(...PropFavoritos,
