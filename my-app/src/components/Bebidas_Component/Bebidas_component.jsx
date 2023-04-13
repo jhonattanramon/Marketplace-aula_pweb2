@@ -6,8 +6,7 @@ const Bebidas_component = (props) => {
     if (props.produtos.length === 0) {
         return
     }
-console.log(props)
-   
+
   return(
     
 <div className="containerBebidas">

@@ -25,6 +25,8 @@ function App() {
     console.log(produto);
   };
 
+  
+
   useEffect(() => {
     const load = async () => {
       const roupas = await (
@@ -67,7 +69,7 @@ function App() {
   return (
     <div className="App">
       <div className="box2">
-        <Favoritos_component favoritos={favoritos} setProps={setFavoritos} />
+        <Favoritos_component favoritos={favoritos} />
       </div>
 
       <div className='box2'>
@@ -78,7 +80,6 @@ function App() {
         <Filmes_component
           produtos={produtos}
           PropFavoritos={favoritos}
-          setProps={setFavoritos}
           onAddDenuncia={addDenunciados}
         />
       </div>
@@ -87,7 +88,6 @@ function App() {
         <div className="box">
           <Jogos_component
             produtos={produtos}
-            setProps={setFavoritos}
             PropFavoritos={favoritos}
           />
         </div>
@@ -95,7 +95,6 @@ function App() {
         <div className="box">
           <Roupas_component
             produtos={produtos}
-            setProps={setFavoritos}
             PropFavoritos={favoritos}
           />
         </div>
@@ -104,7 +103,6 @@ function App() {
       <div className="box2">
         <Sapatos_component
           produtos={produtos}
-          setProps={setFavoritos}
           PropFavoritos={favoritos}
         />
       </div>
@@ -112,14 +110,12 @@ function App() {
       <div className="box4">
         <Bebidas_component
           produtos={produtos}
-          setProps={setFavoritos}
          PropFavoritos={favoritos} />
       </div>
 
         <div className="box2">
         <Carros_component 
          produtos={produtos}
-         setProps={setFavoritos}
         PropFavoritos={favoritos} />
       </div>
     </div>
