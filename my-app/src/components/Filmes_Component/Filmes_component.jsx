@@ -16,7 +16,7 @@ const Filmes_component = (props) => {
 
         <button
           onClick={() => {
-           props.onAddDenuncia( [...props.PropFavoritos, props.produtos.filmes[0]]);
+           props.onAddFavoritos( props.produtos.filmes[0]);
           }}
         >
           adicionar favoritos
@@ -38,7 +38,7 @@ const Filmes_component = (props) => {
         <div>{props.produtos.filmes[1].preco}</div>
         <button
           onClick={() => {
-            setProps([...props.PropFavoritos, props.produtos.filmes[1]]);
+            props.onAddFavoritos(props.produtos.filmes[1])
           }}
         >
           adicionar favoritos
