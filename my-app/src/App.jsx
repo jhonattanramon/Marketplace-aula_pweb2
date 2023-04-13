@@ -25,6 +25,10 @@ function App() {
     console.log(produto);
   };
 
+  const addFavoritos = (produtos) => {
+    console.log( [...produtos, produtos]);
+  }
+ 
   
 
   useEffect(() => {
@@ -81,6 +85,7 @@ function App() {
           produtos={produtos}
           PropFavoritos={favoritos}
           onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
         />
       </div>
 
