@@ -26,10 +26,13 @@ function App() {
   };
 
   const addFavoritos = (produtos) => {
+
+    console.log(produtos);
     setFavoritos([...favoritos, produtos])
    
   }
  
+    console.log(favoritos);
   
 
   useEffect(() => {

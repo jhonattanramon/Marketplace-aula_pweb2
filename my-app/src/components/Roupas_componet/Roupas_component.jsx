@@ -5,6 +5,8 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
     return;
   }
 
+  
+
   return (
     <div
       style={{
@@ -34,15 +36,15 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
               <div>
                 <button
                   onClick={() => {
-                    onAddFavoritos( ...PropFavoritos,
-                      produtos.roupas[Number(id) - 1])
+
+                    console.log(produtos.roupas[Number(id)- 1]);
+                    onAddFavoritos( produtos.roupas[Number(id) - 1])
                   }}
                 >
                   adicionar favoritos
                 </button>
                 <button onClick={() => {
-                  onAddDenuncia(...PropFavoritos,
-                    produtos.roupas[Number(id) - 1])
+                  onAddDenuncia(produtos.roupas[Number(id) - 1])
                 }}>
                   Denunciar
                 </button>
