@@ -96,6 +96,7 @@ function App() {
       </div>
 
       <div className="box-container">
+
         <div className="box">
           <Jogos_component
             produtos={produtos}
@@ -113,6 +114,7 @@ function App() {
           onAddFavoritos={addFavoritos}
           />
         </div>
+        
       </div>
 
       <div className="box2">
