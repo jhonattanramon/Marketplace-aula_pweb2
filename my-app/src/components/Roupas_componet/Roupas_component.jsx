@@ -37,7 +37,7 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
                 <button
                   onClick={() => {
 
-                    console.log(produtos.roupas[Number(id)- 1]);
+                   
                     onAddFavoritos( produtos.roupas[Number(id) - 1])
                   }}
                 >
