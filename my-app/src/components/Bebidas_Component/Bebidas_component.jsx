@@ -29,10 +29,9 @@ const Bebidas_component = (props) => {
               <button
                 className="buttonFav"
                 onClick={() => {
-                  props.onAddFavoritos([
-                    ...props.PropFavoritos,
-                    props.produtos.bebida,
-                  ]);
+                  props.onAddFavoritos(
+                    props.produtos.bebidas[Number(bebida.id - 1)]
+                  );
                 }}
               >
                 FAVORITAR

@@ -18,7 +18,7 @@ function App() {
   const [produtos, setProdutos] = useState([]);
 
   const [favoritos, setFavoritos] = useState([]);
-
+  console.log(favoritos);
   const [denunciados, setDenunciados] = useState([]);
 
   const addDenunciados = (produto) => {
@@ -27,7 +27,6 @@ function App() {
 
   const addFavoritos = (produtos) => {
 
-    console.log(produtos);
     setFavoritos([...favoritos, produtos])
    
   }
@@ -96,6 +95,7 @@ function App() {
       </div>
 
       <div className="box-container">
+
         <div className="box">
           <Jogos_component
             produtos={produtos}
@@ -113,6 +113,7 @@ function App() {
           onAddFavoritos={addFavoritos}
           />
         </div>
+        
       </div>
 
       <div className="box2">
