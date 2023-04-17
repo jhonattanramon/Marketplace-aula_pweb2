@@ -9,10 +9,7 @@ const Sapatos_component = ({produtos, onAddDenuncia, onAddFavoritos}) =>{
 
 <div
       style={{
-        overflowY: "scroll",
-        background: "blue",
-        height: "100%",
-        width: 400,
+    display:'flex',
       }}
     >
       {produtos.sapatos.map(({ imagem, nome, descricao, preco, id }) => {
