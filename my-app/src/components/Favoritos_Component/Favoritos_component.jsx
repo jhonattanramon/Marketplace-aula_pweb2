@@ -30,7 +30,7 @@ const Favoritos_component = ({ favoritos }) => {
   };
 
   useEffect(() => {
-    checkFilmes()
+
     filtrarMenoresValores();
   }, [favoritos]);
 
