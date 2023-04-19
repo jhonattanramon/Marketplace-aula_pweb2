@@ -1,20 +1,19 @@
-import './sapatos.css'
+import "./sapatos.css";
 
-const Sapatos_component = ({produtos, onAddDenuncia, onAddFavoritos}) =>{
-    if(produtos.length === 0){
-       return; 
-    }
+const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
+  if (produtos.length === 0) {
+    return;
+  }
 
-    return(
+  return (
 
-<div
-      style={{
-    display:'flex',
-      }}
-    >
+    <>
+
+    <div className="title"><h1>SAPATOS</h1></div>
+    <div className="card">
       {produtos.sapatos.map(({ imagem, nome, descricao, preco, id }) => {
         return (
-          <section className="caixa-sapato" key={id}>
+          <section className="sectionContainer" key={id}>
             <div>
               <img className="img" src={imagem} alt="" />
             </div>
@@ -32,16 +31,17 @@ const Sapatos_component = ({produtos, onAddDenuncia, onAddFavoritos}) =>{
               <div>
                 <button
                   onClick={() => {
-
-                    console.log(produtos.sapatos[Number(id)- 1]);
-                    onAddFavoritos( produtos.sapatos[Number(id) - 1])
+                    console.log(produtos.sapatos[Number(id) - 1]);
+                    onAddFavoritos(produtos.sapatos[Number(id) - 1]);
+                  }}
+                  >
+                  Adicionar Favoritos
+                </button>
+                <button
+                  onClick={() => {
+                    onAddDenuncia(produtos.sapatos[Number(id) - 1]);
                   }}
                 >
-                  Adicionar Favoritos   
-                </button>
-                <button onClick={() => {
-                  onAddDenuncia(produtos.sapatos[Number(id) - 1])
-                }}>
                   Denunciar
                 </button>
               </div>
@@ -50,6 +50,7 @@ const Sapatos_component = ({produtos, onAddDenuncia, onAddFavoritos}) =>{
         );
       })}
     </div>
+        </>
   );
 };
 export default Sapatos_component;

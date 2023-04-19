@@ -125,14 +125,7 @@ function App() {
         />
       </div>
 
-      <div className="box2">
-        <Carros_component
-          produtos={produtos}
-          PropFavoritos={favoritos}
-          onAddDenuncia={addDenunciados}
-          onAddFavoritos={addFavoritos}
-        />
-      </div>
+     
     </div>
   );
 }

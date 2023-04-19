@@ -7,14 +7,17 @@ const Favoritos_component = ({ favoritos }) => {
     0
   );
 
-  console.log(favoritos);
+
 
   const [valorDigitado, setValorDigitado] = useState("");
 
   const [filtrados, setFiltrados] = useState(favoritos);
 
-  console.log(filtrados);
+    const checkFilmes = () => {
 
+      console.log('aqui');
+    }
+    
   const filtrarMenoresValores = () => {
     if (valorDigitado !== "") {
       const valoresFiltrados = favoritos.filter(
@@ -27,6 +30,7 @@ const Favoritos_component = ({ favoritos }) => {
   };
 
   useEffect(() => {
+    checkFilmes()
     filtrarMenoresValores();
   }, [favoritos]);
 
