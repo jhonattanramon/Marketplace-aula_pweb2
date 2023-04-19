@@ -10,7 +10,9 @@ const Filmes_component = (props) => {
   const setProps = props.setProps;
 
   return (
-    <div className="div">
+    <div className="">
+
+
       <div className="card">
         <img className="img" src={props.produtos.filmes[0].imagem} />
         <div>{props.produtos.filmes[0].nome}</div>
