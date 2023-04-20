@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 const Denuncia_component = ({ denunciados }) => {
 
-  const [filtrados, setFiltrados] = useState(denunciados);
 
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const Denuncia_component = ({ denunciados }) => {
       </div>
 
       <div style={{ display: "flex", gap: 10 }}>
-        {filtrados.map(({ imagem, nome, descricao, preco, id }) => {
+        {denunciados.map(({ imagem, nome, descricao, preco, id }) => {
           return (
             <section
               style={{

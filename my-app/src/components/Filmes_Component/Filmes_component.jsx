@@ -26,7 +26,7 @@ const Filmes_component = (props) => {
                   <button
                     onClick={() => {
                       props.onAddFavoritos(
-                        props.produtos.filmes[
+                        props.produtos[
                           Number(f.id) - 1
                         ]
                       );
@@ -37,7 +37,7 @@ const Filmes_component = (props) => {
                   <button
                     onClick={() => {
                       props.onAddDenuncia(
-                        props.produtos.roupas.filems[
+                        props.produtos[
                           Number(f.id) - 1
                         ]
                       );
