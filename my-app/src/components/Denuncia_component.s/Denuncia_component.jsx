@@ -1,27 +1,13 @@
 import { useEffect, useState } from "react";
 
+
 const Denuncia_component = ({ denunciados }) => {
-  const [valorDigitado, setValorDigitado] = useState("");
 
   const [filtrados, setFiltrados] = useState(denunciados);
 
-  const checkFilmes = () => {
-    console.log("aqui");
-  };
-
-  const filtrarMenoresValores = () => {
-    if (valorDigitado !== "") {
-      const valoresFiltrados = denunciados.filter(
-        ({ preco }) => preco <= valorDigitado
-      );
-      setFiltrados(valoresFiltrados);
-    } else {
-      setFiltrados(denunciados);
-    }
-  };
 
   useEffect(() => {
-    filtrarMenoresValores();
+    
   }, [denunciados]);
 
   return (
@@ -42,23 +28,6 @@ const Denuncia_component = ({ denunciados }) => {
         }}
       >
         <div style={{ textAlign: "center" }}> <h1>DENUNCIAS</h1> </div>
-
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <input
-            placeholder="Filtrar"
-            type="number"
-            name=""
-            id=""
-            value={valorDigitado}
-            onChange={({ target }) => setValorDigitado(target.value)}
-            onBlur={filtrarMenoresValores}
-          />
-          <img
-            style={{ width: "20px", height: "20px" }}
-            src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
-            alt=""
-          />
-        </div>
 
         <div style={{ position: "relative", left: "30%" }}></div>
       </div>
