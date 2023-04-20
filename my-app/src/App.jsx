@@ -23,11 +23,20 @@ function App() {
   const [denunciados, setDenunciados] = useState([]);
 
   const addDenunciados = (produto) => {
-    setDenunciados([...denunciados, produto]);
+    const checkProduto =  denunciados.find((f) => f.id === produto.id)
+
+    if(!checkProduto){
+      setDenunciados([...denunciados, produto]);
+    }
   };
 
-  const addFavoritos = (produtos) => {
-    setFavoritos([...favoritos, produtos]);
+  const addFavoritos = (produto) => {
+
+    const checkProduto = favoritos.find((f) => f.id === produto.id);
+
+    if(!checkProduto){
+      setFavoritos([...favoritos, produto]);
+    } 
   };
 
   console.log(favoritos);

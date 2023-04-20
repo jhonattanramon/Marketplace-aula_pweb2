@@ -27,8 +27,6 @@ const Denuncia_component = ({ denunciados }) => {
         }}
       >
         <div style={{ textAlign: "center" }}> <h1>DENUNCIAS</h1> </div>
-
-        <div style={{ position: "relative", left: "30%" }}></div>
       </div>
 
       <div style={{ display: "flex", gap: 10 }}>
