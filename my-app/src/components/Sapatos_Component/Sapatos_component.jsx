@@ -11,7 +11,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
 
     <div className="title"><h1>SAPATOS</h1></div>
     <div className="card">
-      {produtos.sapatos.map(({ imagem, nome, descricao, preco, id }) => {
+      {produtos.map(({ imagem, nome, descricao, preco, id }) => {
         return (
           <section className="sectionContainer" key={id}>
             <div>

@@ -18,7 +18,7 @@ const Roupas_component = ({
     <div className="card">
 
 
-      {produtos.roupas.map(({ imagem, nome, descricao, preco, id }) => {
+      {produtos.map(({ imagem, nome, descricao, preco, id }) => {
         return (
           <section className="sectionContainer" key={id}>
             <div>

@@ -13,7 +13,7 @@ const Bebidas_component = (props) => {
       </div>
 
       <div className="card">
-        {props.produtos.bebidas.map((bebida) => {
+        {props.produtos.map((bebida) => {
           return (
             <section className="sectionContainer" key={bebida.id}>
               <div>

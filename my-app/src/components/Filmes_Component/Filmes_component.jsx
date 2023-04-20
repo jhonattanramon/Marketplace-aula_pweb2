@@ -11,7 +11,7 @@ const Filmes_component = (props) => {
 
     <div className="title"> <h1>FILMES</h1></div>
       <div className="card">
-        {props.produtos.filmes.map((f) => {
+        {props.produtos.map((f) => {
           return (
             <section className="sectionContainer" key={f.id}>
               <div>
