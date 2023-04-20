@@ -51,8 +51,8 @@ const Favoritos_component = ({ favoritos }) => {
           alignItems: "center",
         }}
       >
-        <div style={{ textAlign: "center" }}>FAVORITOS </div>
-        <div style={{ textAlign: "center" }}> -SOMA: {soma}</div>
+        <div style={{ textAlign: "center" }}> <h1> FAVORITOS</h1> </div>
+        <div style={{ position:'absolute', left:'80%',textAlign: "center" }}>  SOMA: {soma}</div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
           <input

@@ -22,7 +22,7 @@ function App() {
   const [denunciados, setDenunciados] = useState([]);
 
   const addDenunciados = (produto) => {
-    console.log(produto);
+    setDenunciados([...denunciados, produto]);
   };
 
   const addFavoritos = (produtos) => {
@@ -33,6 +33,8 @@ function App() {
 
   useEffect(() => {
     const load = async () => {
+
+      console.log('use effect');
       const roupas = await (
         await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas")
       ).json();
@@ -52,6 +54,8 @@ function App() {
         await fetch("https://6436eb343e4d2b4a12df1a39.mockapi.io/carros")
       ).json();
 
+      console.log(roupas);
+
       const ObjProdutos = {
         roupas: roupas,
         filmes: filmes,
@@ -68,7 +72,6 @@ function App() {
 
   return (
     <div className="App">
-      
       <div className="box2">
         <Favoritos_component
           favoritos={favoritos}
@@ -77,7 +80,7 @@ function App() {
       </div>
 
       <div className="box2">
-        <Denuncia_component />
+        <Denuncia_component denunciados={denunciados} />
       </div>
 
       <div className="box2">
@@ -124,8 +127,6 @@ function App() {
           onAddFavoritos={addFavoritos}
         />
       </div>
-
-     
     </div>
   );
 }
