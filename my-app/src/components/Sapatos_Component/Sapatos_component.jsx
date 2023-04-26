@@ -31,15 +31,15 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
               <div>
                 <button
                   onClick={() => {
-                    console.log(produtos.sapatos[Number(id) - 1]);
-                    onAddFavoritos(produtos.sapatos[Number(id) - 1]);
+                  
+                    onAddFavoritos(produtos[Number(id) - 1]);
                   }}
                   >
                   Adicionar Favoritos
                 </button>
                 <button
                   onClick={() => {
-                    onAddDenuncia(produtos.sapatos[Number(id) - 1]);
+                    onAddDenuncia(produtos[Number(id) - 1]);
                   }}
                 >
                   Denunciar

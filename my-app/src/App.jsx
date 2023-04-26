@@ -39,31 +39,12 @@ function App() {
     } 
   };
 
-  console.log(favoritos);
 
   useEffect(() => {
     const load = async () => {
-      const fakeStoreaApi = await (
-        await fetch("https://fakestoreapi.com/products")
-      ).json();
-      // const roupas = await (
-      //   await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Roupas")
-      // ).json();
-      // const filmes = await (
-      //   await fetch("https://6426bdd3556bad2a5b56d684.mockapi.io/Filmes")
-      // ).json();
-      // const jogos = await (
-      //   await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/jogos")
-      // ).json();
-      // const sapatos = await (
-      //   await fetch("https://6426c45cd24d7e0de477b3dd.mockapi.io/sapatos")
-      // ).json();
-      // const bebidas = await (
-      //   await fetch("https://642dbef1bf8cbecdb40df741.mockapi.io/bebidas")
-      // ).json();
-      // const carros = await (
-      //   await fetch("https://6436eb343e4d2b4a12df1a39.mockapi.io/carros")
-      // ).json();
+      const resultJson = await fetch("https://fakestoreapi.com/products");
+     
+      const fakeStoreaApi = await resultJson.json()
 
       //formatação da API FAKE
       const apiFomatada = [];
@@ -77,14 +58,7 @@ function App() {
         });
       });
 
-      // const ObjProdutos = {
-      //   roupas: roupas,
-      //   filmes: filmes,
-      //   jogos: jogos,
-      //   sapatos: sapatos,
-      //   bebidas: bebidas,
-      //   carros: carros,
-      // };
+
       setProdutos(apiFomatada);
     };
     load();

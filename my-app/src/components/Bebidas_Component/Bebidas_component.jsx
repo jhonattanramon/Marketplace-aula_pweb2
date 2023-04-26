@@ -38,7 +38,7 @@ const Bebidas_component = (props) => {
                   className="buttonFav"
                   onClick={() => {
                     props.onAddFavoritos(
-                      props.produtos.bebidas[Number(bebida.id - 1)]
+                      props.produtos[Number(bebida.id - 1)]
                       );
                     }}
                     >
@@ -51,7 +51,7 @@ const Bebidas_component = (props) => {
                 <button 
                 onClick={ () => {
                   props.onAddDenuncia(
-                    props.produtos.bebidas[Number(bebida.id - 1)]
+                    props.produtos[Number(bebida.id - 1)]
                   )
                 }}
                 className="buttonDen">DENUNCIAR</button>

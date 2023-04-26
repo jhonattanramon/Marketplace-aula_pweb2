@@ -32,7 +32,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
               <button
                 onClick={() => {
                   onAddFavoritos(
-                    produtos.jogos[Number(id) - 1],
+                    produtos[Number(id) - 1],
                   );
                 }}
                 >
@@ -42,7 +42,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
               <button
               onClick={ () => {
                 onAddDenuncia ( 
-                  produtos.jogos[Number(id) - 1]
+                  produtos[Number(id) - 1]
                 )
               }}>
                 Denunciar
