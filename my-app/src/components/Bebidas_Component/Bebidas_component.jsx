@@ -6,47 +6,62 @@ const Bebidas_component = (props) => {
   }
 
   return (
-    <div className="containerBebidas">
-      {props.produtos.bebidas.map((bebida) => {
-        return (
-          <div className="cardBebidas" key={bebida.id}>
-            <img
-              className="cardBebidas1"
-              src={bebida.imagem}
-              alt="logo das marcas"
-            />
-            <div className="cardH3">
-              <h3>
-                {bebida.nome} <br />
-              </h3>
-              <div className="cardInfo">
-                <h3>{bebida.descricao}</h3>
-                <h3>R${bebida.preco}</h3>
+    <>
+      <div className="title">
+        {" "}
+        <h1>BEBIDAS</h1>
+      </div>
+
+      <div className="card">
+        {props.produtos.bebidas.map((bebida) => {
+          return (
+            <section className="sectionContainer" key={bebida.id}>
+              <div>
+                <img
+                  className="img"
+                  src={bebida.imagem}
+                  alt="logo das marcas"
+                />
               </div>
-            </div>
+              <div className="divDescription">
+                <h3>
+                  {bebida.nome} <br />
+                </h3>
 
-            <div className="fav">
-              <button
-                className="buttonFav"
-                onClick={() => {
-                  props.onAddFavoritos([
-                    ...props.PropFavoritos,
-                    props.produtos.bebida,
-                  ]);
+                <div className="cardInfo">
+                  <h3>{bebida.descricao}</h3>
+                  <h3>R${bebida.preco}</h3>
+                </div>
+
+              <div className="fav">
+                <button
+                  className="buttonFav"
+                  onClick={() => {
+                    props.onAddFavoritos(
+                      props.produtos.bebidas[Number(bebida.id - 1)]
+                      );
+                    }}
+                    >
+                  FAVORITAR
+                </button>
+                <br />
+              </div>
+
+              <div className="den">
+                <button 
+                onClick={ () => {
+                  props.onAddDenuncia(
+                    props.produtos.bebidas[Number(bebida.id - 1)]
+                  )
                 }}
-              >
-                FAVORITAR
-              </button>
-              <br />
-            </div>
-
-            <div className="den">
-              <button className="buttonDen">DENUNCIAR</button>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+                className="buttonDen">DENUNCIAR</button>
+              </div>
+                  </div>
+            </section>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

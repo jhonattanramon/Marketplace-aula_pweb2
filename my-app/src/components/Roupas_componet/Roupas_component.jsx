@@ -1,21 +1,23 @@
 import "./roupas.css";
 
-const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavoritos }) => {
+const Roupas_component = ({
+  produtos,
+  onAddFavoritos,
+  onAddDenuncia,
+  PropFavoritos,
+}) => {
   if (produtos.length === 0) {
     return;
   }
 
-  
-
   return (
-    <div
-      style={{
-        overflowY: "scroll",
-        background: "blue",
-        height: "100%",
-        width: 400,
-      }}
-    >
+
+    <> 
+      <div className="title"> <h1>ROUPAS</h1> </div>
+
+    <div className="card">
+
+
       {produtos.roupas.map(({ imagem, nome, descricao, preco, id }) => {
         return (
           <section className="sectionContainer" key={id}>
@@ -36,16 +38,16 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
               <div>
                 <button
                   onClick={() => {
-
-                    console.log(produtos.roupas[Number(id)- 1]);
-                    onAddFavoritos( produtos.roupas[Number(id) - 1])
+                    onAddFavoritos(produtos.roupas[Number(id) - 1]);
                   }}
                 >
                   Adicionar Favoritos
                 </button>
-                <button onClick={() => {
-                  onAddDenuncia(produtos.roupas[Number(id) - 1])
-                }}>
+                <button
+                  onClick={() => {
+                    onAddDenuncia(produtos.roupas[Number(id) - 1]);
+                  }}
+                  >
                   Denunciar
                 </button>
               </div>
@@ -54,6 +56,7 @@ const Roupas_component = ({ produtos, onAddFavoritos, onAddDenuncia, PropFavorit
         );
       })}
     </div>
+                  </>
   );
 };
 

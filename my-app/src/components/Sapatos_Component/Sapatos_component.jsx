@@ -1,135 +1,56 @@
-import './sapatos.css'
+import "./sapatos.css";
 
-const Sapatos_component = (props) => {
+const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
+  if (produtos.length === 0) {
+    return;
+  }
 
-    if( props.produtos.length === 0){
+  return (
 
-        return
-    }
+    <>
 
-const setProps = props.setProps
-
-// console.log(props);
-
-    return(
-
-    <div className='caixaDeSapato'>
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[0].imagem}alt="" />
-            <p>{props.produtos.sapatos[0].nome}</p>
-            <p>{props.produtos.sapatos[0].preco}</p>
-
-    <button onClick={ () => {
-
-        setProps( [...props.PropFavoritos, props.produtos.sapatos[0]])
-    }}>Adicionar Favoritos</button>
-
-        </div>
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[1].imagem}alt="" />
-            <p>{props.produtos.sapatos[1].nome}</p>
-            <p>{props.produtos.sapatos[1].preco}</p>
-
-    <button onClick={ () => {
-
-        setProps( [...props.PropFavoritos, props.produtos.sapatos[1]])
-    }}>Adicionar Favoritos</button>
-
-        </div>
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[2].imagem}alt="" />
-            <p>{props.produtos.sapatos[2].nome}</p>
-            <p>{props.produtos.sapatos[2].preco}</p>
-
-    <button onClick={ () => {
-
-        setProps( [...props.PropFavoritos, props.produtos.sapatos[2]])
-
-    }}>Adicionar Favoritos</button>
-
-        </div>
-
-
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[3].imagem}alt="" />
-
-            <p>{props.produtos.sapatos[3].nome}</p>
-
-            <p>{props.produtos.sapatos[3].preco}</p>
-
-
-
-    <button onClick={ () => {
-
-        setProps( [...props.PropFavoritos, props.produtos.sapatos[3]])
-
-    }}>Adicionar Favoritos</button>
-
-        </div>
-
-
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[4].imagem}alt="" />
-
-            <p>{props.produtos.sapatos[4].nome}</p>
-
-            <p>{props.produtos.sapatos[4].preco}</p>
-
-            <button onClick={ () => {
-
-                setProps( [...props.PropFavoritos, props.produtos.sapatos[4]])
-
-                }}>Adicionar Favoritos
-                
-            </button>
-
-        </div>
-
-        <div className='sapatos'>
-
-            <img className='img' src={props.produtos.sapatos[5].imagem}alt="" />
-
-            <p>{props.produtos.sapatos[5].nome}</p>
-
-            <p>{props.produtos.sapatos[5].preco}</p>
-
-            <button onClick={ () => {
-
-            setProps( [...props.PropFavoritos, props.produtos.sapatos[5]])
-
-            }}>Adicionar Favoritos</button>
-
-        </div>
-
-            <div className='sapatos'>
-
-                <img className='img' src={props.produtos.sapatos[7].imagem}alt="" />
-
-                <p>{props.produtos.sapatos[7].nome}</p>
-
-                <p>{props.produtos.sapatos[7].preco}</p>
-
-                <button onClick={ () => {
-
-            setProps( [...props.PropFavoritos, props.produtos.sapatos[7]])
-
-            }}>Adicionar Favoritos</button>
-
+    <div className="title"><h1>SAPATOS</h1></div>
+    <div className="card">
+      {produtos.sapatos.map(({ imagem, nome, descricao, preco, id }) => {
+        return (
+          <section className="sectionContainer" key={id}>
+            <div>
+              <img className="img" src={imagem} alt="" />
             </div>
 
+            <div className="divDescription">
+              <div>{nome} </div>
+              <div>
+                <span>
+                  {" "}
+                  <span> $: </span>
+                  {preco}
+                </span>
+              </div>
 
-
+              <div>
+                <button
+                  onClick={() => {
+                    console.log(produtos.sapatos[Number(id) - 1]);
+                    onAddFavoritos(produtos.sapatos[Number(id) - 1]);
+                  }}
+                  >
+                  Adicionar Favoritos
+                </button>
+                <button
+                  onClick={() => {
+                    onAddDenuncia(produtos.sapatos[Number(id) - 1]);
+                  }}
+                >
+                  Denunciar
+                </button>
+              </div>
+            </div>
+          </section>
+        );
+      })}
     </div>
-    )
-}
-export default Sapatos_component
+        </>
+  );
+};
+export default Sapatos_component;

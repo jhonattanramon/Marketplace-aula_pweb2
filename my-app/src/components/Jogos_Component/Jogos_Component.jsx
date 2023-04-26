@@ -1,17 +1,16 @@
 import "./jogos_estilos.css";
 
-const Jogos_component = ({produtos,setProps,PropFavoritos}) => {
+const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
   if (produtos.length === 0) {
     return;
   }
   return (
- <div
- style={{
-  overflowY: "scroll",
-  background: "blue",
-  height: "100%",
-  width: 400,
-}}>
+
+    <> 
+
+    <div className="title"><h1>JOGOS</h1></div>
+ 
+ <div className="card">
     {produtos.jogos.map(({ imagem, nome, descricao, preco, id }) => {
       return (
         <section className="sectionContainer" key={id}>
@@ -32,13 +31,21 @@ const Jogos_component = ({produtos,setProps,PropFavoritos}) => {
             <div>
               <button
                 onClick={() => {
-                  setProps([
-                    ...PropFavoritos,
+                  onAddFavoritos(
                     produtos.jogos[Number(id) - 1],
-                  ]);
+                  );
                 }}
-              >
+                >
                 adicionar favoritos
+              </button>
+
+              <button
+              onClick={ () => {
+                onAddDenuncia ( 
+                  produtos.jogos[Number(id) - 1]
+                )
+              }}>
+                Denunciar
               </button>
             </div>
           </div>
@@ -46,6 +53,7 @@ const Jogos_component = ({produtos,setProps,PropFavoritos}) => {
       );
     })}
    </div>
+    </>
 );
 };
 
