@@ -1,15 +1,15 @@
 import "./filmes.css";
 const Filmes_component = (props) => {
-  console.log(props);
-
   if (props.produtos.length === 0) {
     return;
   }
 
   return (
     <>
-
-    <div className="title"> <h1>FILMES</h1></div>
+      <div className="title">
+        {" "}
+        <h1>FILMES</h1>
+      </div>
       <div className="card">
         {props.produtos.map((f) => {
           return (
@@ -25,22 +25,14 @@ const Filmes_component = (props) => {
                 <div>
                   <button
                     onClick={() => {
-                      props.onAddFavoritos(
-                        props.produtos[
-                          Number(f.id) - 1
-                        ]
-                      );
+                      props.onAddFavoritos(props.produtos[Number(f.id) - 1]);
                     }}
                   >
                     Adicionar Favoritos
                   </button>
                   <button
                     onClick={() => {
-                      props.onAddDenuncia(
-                        props.produtos[
-                          Number(f.id) - 1
-                        ]
-                      );
+                      props.onAddDenuncia(props.produtos[Number(f.id) - 1]);
                     }}
                   >
                     Denunciar

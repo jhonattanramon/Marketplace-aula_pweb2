@@ -9,42 +9,39 @@ import Jogos_component from "./components/Jogos_Component/Jogos_Component";
 import Roupas_component from "./components/Roupas_componet/Roupas_component";
 import Sapatos_component from "./components/Sapatos_Component/Sapatos_component";
 import Bebidas_component from "./components/Bebidas_Component/Bebidas_component";
-import Carros_component from "./components/Carros_component/Carros_component";
 
 import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
 import Denuncia_component from "./components/Denuncia_component.s/Denuncia_component";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
-
-  console.log(produtos);
   const [favoritos, setFavoritos] = useState([]);
-  console.log(favoritos);
   const [denunciados, setDenunciados] = useState([]);
 
-  const addDenunciados = (produto) => {
-    const checkProduto =  denunciados.find((f) => f.id === produto.id)
+  const [totalFavoritos, setTotalFavoritos] = useState(0);
 
-    if(!checkProduto){
+  const addDenunciados = (produto) => {
+    const checkProduto = denunciados.find((f) => f.id === produto.id);
+
+    if (!checkProduto) {
       setDenunciados([...denunciados, produto]);
     }
   };
 
   const addFavoritos = (produto) => {
-
     const checkProduto = favoritos.find((f) => f.id === produto.id);
 
-    if(!checkProduto){
+    if (!checkProduto) {
+      setTotalFavoritos(totalFavoritos + produto.preco);
       setFavoritos([...favoritos, produto]);
-    } 
+    }
   };
-
 
   useEffect(() => {
     const load = async () => {
       const resultJson = await fetch("https://fakestoreapi.com/products");
-     
-      const fakeStoreaApi = await resultJson.json()
+
+      const fakeStoreaApi = await resultJson.json();
 
       //formatação da API FAKE
       const apiFomatada = [];
@@ -58,7 +55,6 @@ function App() {
         });
       });
 
-
       setProdutos(apiFomatada);
     };
     load();
@@ -67,6 +63,7 @@ function App() {
   return (
     <div className="App">
       <div className="box2">
+        <h1>{totalFavoritos}</h1>
         <Favoritos_component
           favoritos={favoritos}
           onAddFavoritos={addFavoritos}
