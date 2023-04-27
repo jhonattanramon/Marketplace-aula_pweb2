@@ -11,7 +11,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
     <div className="title"><h1>JOGOS</h1></div>
  
  <div className="card">
-    {produtos.jogos.map(({ imagem, nome, descricao, preco, id }) => {
+    {produtos.map(({ imagem, nome, descricao, preco, id }) => {
       return (
         <section className="sectionContainer" key={id}>
           <div>
@@ -32,7 +32,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
               <button
                 onClick={() => {
                   onAddFavoritos(
-                    produtos.jogos[Number(id) - 1],
+                    produtos[Number(id) - 1],
                   );
                 }}
                 >
@@ -42,7 +42,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
               <button
               onClick={ () => {
                 onAddDenuncia ( 
-                  produtos.jogos[Number(id) - 1]
+                  produtos[Number(id) - 1]
                 )
               }}>
                 Denunciar

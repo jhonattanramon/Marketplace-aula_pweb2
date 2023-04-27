@@ -13,8 +13,8 @@ const Favoritos_component = ({ favoritos }) => {
 
   const [filtrados, setFiltrados] = useState(favoritos);
 
-  console.log(filtrados);
-
+  const checkFilmes = () => {};
+    
   const filtrarMenoresValores = () => {
     if (valorDigitado !== "") {
       const valoresFiltrados = favoritos.filter(
@@ -27,7 +27,7 @@ const Favoritos_component = ({ favoritos }) => {
   };
 
   useEffect(() => {
-    checkFilmes()
+
     filtrarMenoresValores();
   }, [favoritos]);
 
@@ -48,8 +48,8 @@ const Favoritos_component = ({ favoritos }) => {
           alignItems: "center",
         }}
       >
-        <div style={{ textAlign: "center" }}>FAVORITOS </div>
-        <div style={{ textAlign: "center" }}> -SOMA: {soma}</div>
+        <div style={{ textAlign: "center" }}> <h1> FAVORITOS</h1> </div>
+        <div style={{ position:'absolute', left:'80%',textAlign: "center" }}>  SOMA: {soma}</div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
           <input

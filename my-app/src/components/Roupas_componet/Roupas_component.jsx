@@ -18,7 +18,7 @@ const Roupas_component = ({
     <div className="card">
 
 
-      {produtos.roupas.map(({ imagem, nome, descricao, preco, id }) => {
+      {produtos.map(({ imagem, nome, descricao, preco, id }) => {
         return (
           <section className="sectionContainer" key={id}>
             <div>
@@ -38,14 +38,14 @@ const Roupas_component = ({
               <div>
                 <button
                   onClick={() => {
-                    onAddFavoritos(produtos.roupas[Number(id) - 1]);
+                    onAddFavoritos(produtos[Number(id) - 1]);
                   }}
                 >
                   Adicionar Favoritos
                 </button>
                 <button
                   onClick={() => {
-                    onAddDenuncia(produtos.roupas[Number(id) - 1]);
+                    onAddDenuncia(produtos[Number(id) - 1]);
                   }}
                   >
                   Denunciar
