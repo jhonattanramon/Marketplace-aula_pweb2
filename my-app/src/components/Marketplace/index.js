@@ -98,6 +98,8 @@ const Marketplace = () => {
       </div>
 
       <div className="box2">
+
+         
         <Roupas_component
           produtos={produtos}
           PropFavoritos={favoritos}

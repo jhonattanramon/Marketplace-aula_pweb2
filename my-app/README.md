@@ -15,7 +15,7 @@
         ```
             <label>{contagem}</label>
         ```
-    5.3 Na funçâo que trata o click do adicionar, incrementar a variável contagem com:
+    5.3 Na função que trata o click do adicionar, incrementar a variável contagem com:
         ```
             setContagem(contagem++);
         ```
