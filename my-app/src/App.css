@@ -1,4 +1,4 @@
-.App {
+/* .App {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -38,14 +38,14 @@
 
 .box2::-webkit-scrollbar-track {
   height: 5px;
-  background:none;        /* color of the tracking area */
+  background:none;       
 }
 .box2::-webkit-scrollbar-thumb {
   width: 10px;
-  background-color: white;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+  background-color: white;    
+  border-radius: 20px;       
   border: none ;
-   /* creates padding around scroll thumb */
+   
 }
 .box-container{
   border: 1px solid gray;
@@ -73,7 +73,6 @@
 
 
 
-/* teste */
 
 .card {
  
@@ -121,4 +120,4 @@
 .divDescription button:hover{
  background: rgb(209, 209, 209);
 
-}
+} */

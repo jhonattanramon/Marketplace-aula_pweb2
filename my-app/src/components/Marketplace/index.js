@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Filmes_component from "../Filmes_Component/Filmes_component";
 import Jogos_component from "../Jogos_Component/Jogos_Component";
 import Roupas_component from "../Roupas_componet/Roupas_component";
+import FRoupas_Femininas_component from "../FRoupas_Femininas_component/Roupas_component";
 import Sapatos_component from "../Sapatos_Component/Sapatos_component";
 import Bebidas_component from "../Bebidas_Component/Bebidas_component";
 import Favoritos_component from "../Favoritos_Component/Favoritos_component";
@@ -95,6 +96,15 @@ const Marketplace = () => {
 
       <div className="box2">
         <Roupas_component
+          produtos={produtos}
+          PropFavoritos={favoritos}
+          onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+        />
+      </div>
+
+      <div className="box2">
+        <FRoupas_Femininas_component
           produtos={produtos}
           PropFavoritos={favoritos}
           onAddDenuncia={addDenunciados}
