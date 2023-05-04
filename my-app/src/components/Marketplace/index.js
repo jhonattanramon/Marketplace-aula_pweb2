@@ -11,6 +11,7 @@ import Sapatos_component from "../Sapatos_Component/Sapatos_component";
 import Bebidas_component from "../Bebidas_Component/Bebidas_component";
 import Favoritos_component from "../Favoritos_Component/Favoritos_component";
 import Denuncia_component from "../Denuncia_component.s/Denuncia_component";
+import Smartphones_Component from "../Smartphones_Component/Smartphones_Component";
 
 
 
@@ -119,6 +120,15 @@ const Marketplace = () => {
 
       <div className="box2">
         <Bebidas_component
+          produtos={produtos}
+          PropFavoritos={favoritos}
+          onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+        />
+      </div>
+
+      <div className="box2">
+        <Smartphones_Component
           produtos={produtos}
           PropFavoritos={favoritos}
           onAddDenuncia={addDenunciados}
