@@ -1,19 +1,100 @@
+import { useEffect, useState } from "react";
 import "./bebidas.css";
 
 const Bebidas_component = (props) => {
+
+  const [mantimentos, setMantimentos] = useState([]);
+
+  useEffect( () => {
+
+    const load = async () => {
+      const resultJson = await fetch("https://dummyjson.com/products/category/groceries");
+
+      const resultProduct = await resultJson.json();
+      let resultFormatado = resultProduct.products.map(({ id, title, price, thumbnail, rating, stock }) => ({
+        id: id,
+        nome: title,
+        preco: price,
+        imagem: thumbnail,
+        avaliacao: rating,
+        estoque: stock,
+      }));
+
+      setMantimentos(resultFormatado);
+    };
+
+    load();
+  },[] );
+
   if (props.produtos.length === 0) {
     return null;
   }
   
-
   return (
     <>
       <div className="title">
-        {" "}
-        <h1>BEBIDAS</h1>
+    
+        <h1>GROCERIES</h1>
+
+        <div className="card">
+        {mantimentos.map((produto) => {
+          return (
+            <section className="sectionContainer" key={produto.id}>
+              <div>
+                <img
+                  className="img"
+                  src={produto.imagem}
+                  alt="logo das marcas"
+                />
+              </div>
+              <div className="divDescription">
+                <h3>
+                  {produto.nome} <br />
+                </h3>
+
+                <div className="cardInfo">
+                  <h3>{produto.descricao}</h3>
+                  <h3>R${produto.preco}</h3>
+                  <h3>{produto.avaliacao}</h3>
+                  <h3>{produto.estoque}</h3>
+                </div>
+
+              <div className="fav">
+                <button
+                  className="buttonFav"
+                  onClick={() => {
+                    props.onAddFavoritos(
+                      props.produtos[Number(produto.id - 1)]
+                      );
+                    }}
+                    >
+                  FAVORITAR
+                </button>
+                <br />
+              </div>
+
+              <div className="den">
+                <button 
+                onClick={ () => {
+                  props.onAddDenuncia(
+                    props.produtos[Number(produto.id - 1)]
+                  )
+                }}
+                className="buttonDen">DENUNCIAR</button>
+              </div>
+                  </div>
+            </section>
+          );
+        })}
+      </div>
       </div>
 
+      <div className="title">
+      <h1>BEBIDA</h1>
+      
       <div className="card">
+      
+
         {props.produtos.map((bebida) => {
           return (
             <section className="sectionContainer" key={bebida.id}>
@@ -61,6 +142,7 @@ const Bebidas_component = (props) => {
             </section>
           );
         })}
+      </div>
       </div>
     </>
   );
