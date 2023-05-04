@@ -7,7 +7,7 @@ const Favoritos_component = ({ favoritos }) => {
     0
   );
 
-
+  console.log(favoritos);
 
   const [valorDigitado, setValorDigitado] = useState("");
 
