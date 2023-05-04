@@ -44,7 +44,16 @@ const FRoupas_Femininas_component = ({
 
     <> 
       <div className="title"> <h1>ROUPAS FEMININAS<label> {contagem}</label></h1> 
-        
+        <select name="opt" id="iopt">
+
+                <option value="" selected>----Escolha----</option>
+                  <optgroup label="Filtrar">
+                    <option value="mep">Menor Preço</option>
+                    <option value="map">Maior Preço</option>
+                    <option value="mas">Mais estoque</option>
+                  </optgroup>
+
+        </select>
       </div>
 
     <div className="card">
