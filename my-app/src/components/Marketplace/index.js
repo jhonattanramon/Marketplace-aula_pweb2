@@ -41,6 +41,7 @@ const Marketplace = () => {
 
       const resultProduct = await resultJson.json();
 
+      console.log();
       //formatação da API FAKE
       let apiFormatada = resultProduct.map(({ id, title, price, image }) => ({
         id: id,
