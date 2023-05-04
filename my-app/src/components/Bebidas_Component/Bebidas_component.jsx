@@ -4,9 +4,9 @@ import "./bebidas.css";
 const Bebidas_component = (props) => {
 
   const [mantimentos, setMantimentos] = useState([]);
+  const [ordem, setOrdem] = useState("preco");
 
   useEffect( () => {
-
     const load = async () => {
       const resultJson = await fetch("https://dummyjson.com/products/category/groceries");
 
@@ -21,10 +21,19 @@ const Bebidas_component = (props) => {
       }));
 
       setMantimentos(resultFormatado);
+      console.log(mantimentos)
     };
 
     load();
   },[] );
+
+
+  useEffect(()=> {
+    const lista = mantimentos.slice();
+    lista.sort((m1, m2) => m2[ordem] > m1[ordem] ? 1 : m2[ordem] < m1[ordem] ? -1:0 );
+    console.log('order: '+ ordem);
+    setMantimentos(lista);
+  }, [ordem])
 
   if (props.produtos.length === 0) {
     return null;
@@ -35,7 +44,13 @@ const Bebidas_component = (props) => {
       <div className="title">
     
         <h1>GROCERIES</h1>
-
+        <div>
+          <select onChange={(event) => setOrdem(event.target.value)}>
+            <option value="preco">Preço</option>
+            <option value="estoque">Estoque</option>
+            <option value="avaliacao">Avaliação</option>
+          </select>
+        </div>
         <div className="card">
         {mantimentos.map((produto) => {
           return (
