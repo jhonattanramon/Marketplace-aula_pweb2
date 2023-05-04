@@ -6,12 +6,14 @@ const Roupas_component = ({
   onAddDenuncia,
   PropFavoritos,
 }) => {
+
+
   const [contagem, setContagem] = useState(0)
+
+
   if (produtos.length === 0) {
     return;
   }
-  
-  
 
   return (
 

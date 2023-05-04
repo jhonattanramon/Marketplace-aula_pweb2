@@ -35,20 +35,21 @@ const Marketplace = () => {
   };
 
   useEffect( () => {
+
     const load = async () => {
       const resultJson = await fetch("https://fakestoreapi.com/products");
 
       const resultProduct = await resultJson.json();
 
       //formatação da API FAKE
-      let apiFomatada = resultProduct.map(({ id, title, price, image }) => ({
+      let apiFormatada = resultProduct.map(({ id, title, price, image }) => ({
         id: id,
         nome: title,
         preco: price,
         imagem: image,
       }));
 
-      setProdutos(apiFomatada);
+      setProdutos(apiFormatada);
     };
 
     load();

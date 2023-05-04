@@ -4,6 +4,7 @@ const Bebidas_component = (props) => {
   if (props.produtos.length === 0) {
     return null;
   }
+  
 
   return (
     <>
