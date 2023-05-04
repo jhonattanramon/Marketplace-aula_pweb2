@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
+import { useState } from "react";
+
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);
@@ -83,7 +85,7 @@ const Filmes_component = (props) => {
 
       <div className="title">
         {" "}
-        <h1>FILMES</h1>
+        <h1>FILMES - <label> CONTAGEM: {contagem}</label></h1>
       </div>
       <div className="card">
         {props.produtos.map((f) => {
@@ -101,6 +103,7 @@ const Filmes_component = (props) => {
                   <button
                     onClick={() => {
                       props.onAddFavoritos(props.produtos[Number(f.id) - 1]);
+                      setContagem(contagem + 1)
                     }}
                   >
                     Adicionar Favoritos
