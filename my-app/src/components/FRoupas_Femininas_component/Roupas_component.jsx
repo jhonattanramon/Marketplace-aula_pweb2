@@ -1,26 +1,48 @@
 import "./roupas.css";
 import { useEffect, useState } from "react";
-const Roupas_component = ({
+const FRoupas_Femininas_component = ({
   produtos,
   onAddFavoritos,
   onAddDenuncia,
   PropFavoritos,
 }) => {
 
-//  if (produtos.length === 0) {
-//     return;
-//   }
+
+  // if (produtos.length === 0) {
+  //   return;
+  // }
   const [contagem, setContagem] = useState(0)
+  const [produtosf, setProdutos] = useState(0)
 
 
- 
+    useEffect(() => {
+      
+      const load = async () => {
+        const resultJson = await fetch("https://dummyjson.com/products/category/womens-dresses")
 
- 
+        const resultProduct = await resultJson.json();
+      
+        console.log();
+
+        let api = resultProduct.map(({ id, title, price, image, rating }) => ({
+          id: id,
+          title: title,
+          price: price,
+          image: image,
+          rating: rating,
+           
+        }));
+
+        setProdutos(api)
+
+      }
+      load();
+    },[]); 
 
   return (
 
     <> 
-      <div className="title"> <h1>ROUPAS <label> {contagem}</label></h1> 
+      <div className="title"> <h1>ROUPAS FEMININAS<label> {contagem}</label></h1> 
         
       </div>
 
@@ -70,4 +92,4 @@ const Roupas_component = ({
   );
 };
 
-export default Roupas_component;
+export default FRoupas_Femininas_component;
