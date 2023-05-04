@@ -1,7 +1,6 @@
 import "./roupas.css";
 import { useEffect, useState } from "react";
 const FRoupas_Femininas_component = ({
-
   onAddFavoritos,
   onAddDenuncia,
   PropFavoritos,
@@ -25,11 +24,13 @@ const FRoupas_Femininas_component = ({
         const result = resultProduct.products
         console.log(result);
 
-        let api = result.map(({ id, title, price, thumbnail }) => ({
+        let api = result.map(({ id, title, price, thumbnail, stock, rating }) => ({
           id: id,
           nome: title,
           preco: price,
           imagem: thumbnail,
+          estoque: stock,
+          avaliacao: rating,
           
            
         }));
@@ -44,13 +45,14 @@ const FRoupas_Femininas_component = ({
 
     <> 
       <div className="title"> <h1>ROUPAS FEMININAS<label> {contagem}</label></h1> 
+        
         <select name="opt" id="iopt">
 
                 <option value="" selected>----Escolha----</option>
                   <optgroup label="Filtrar">
-                    <option value="mep">Menor Preço</option>
-                    <option value="map">Maior Preço</option>
-                    <option value="mas">Mais estoque</option>
+                    <option value="mpreco">Menor Preço</option>
+                    <option value="mestoque">Mais estoque</option>
+                    <option value="mavaliacao">Mais avaliação</option>
                   </optgroup>
 
         </select>
@@ -59,7 +61,7 @@ const FRoupas_Femininas_component = ({
     <div className="card">
 
 
-      {produtos.map(({ imagem, nome, descricao, preco, id }) => {
+      {produtos.map(({ imagem, nome, descricao, preco, id, estoque, avaliacao }) => {
         return (
           <section className="sectionContainer" key={id}>
             <div>
@@ -68,6 +70,8 @@ const FRoupas_Femininas_component = ({
 
             <div className="divDescription">
               <div>{nome} </div>
+              <div>{avaliacao}</div>
+              <div>{estoque}</div>
               <div>
                 <span>
                   {" "}
