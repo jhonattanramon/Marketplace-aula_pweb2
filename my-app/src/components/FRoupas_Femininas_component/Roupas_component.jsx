@@ -1,5 +1,9 @@
 import "./roupas.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
+
+
+
 const FRoupas_Femininas_component = ({
   onAddFavoritos,
   onAddDenuncia,
@@ -43,7 +47,12 @@ const FRoupas_Femininas_component = ({
 
   return (
 
+
+
     <> 
+
+
+
       <div className="title"> <h1>ROUPAS FEMININAS<label> {contagem}</label></h1> 
         
         <select name="opt" id="iopt">
@@ -57,6 +66,9 @@ const FRoupas_Femininas_component = ({
 
         </select>
       </div>
+     
+      <Link to="FRoupasHome">Clique para ir a página de Roupas Femininas</Link>
+
 
     <div className="card">
 
