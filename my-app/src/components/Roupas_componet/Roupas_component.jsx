@@ -1,9 +1,5 @@
 import "./roupas.css";
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
-=======
-import { useEffect, useState } from "react";
->>>>>>> fa66fc7d885d2725f11a4025acc45e1d680c1771
 const Roupas_component = ({
   
   onAddFavoritos,
@@ -11,17 +7,11 @@ const Roupas_component = ({
   PropFavoritos,
 }) => {
 
-<<<<<<< HEAD
   // if (produtos.length === 0) {
   //   return;
   // }
 
 
-=======
-//  if (produtos.length === 0) {
-//     return;
-//   }
->>>>>>> fa66fc7d885d2725f11a4025acc45e1d680c1771
   const [contagem, setContagem] = useState(0)
 
   const [produtos, setProdutos] = useState([])
@@ -48,16 +38,10 @@ const Roupas_component = ({
 
     setProdutos(selectionProduct)
 
-<<<<<<< HEAD
   }
     loading()
   },[]);
 
-=======
- 
-
- 
->>>>>>> fa66fc7d885d2725f11a4025acc45e1d680c1771
 
   useEffect (() =>{
 

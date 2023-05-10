@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
-import { useState } from "react";
 
 const Filmes_component = (props) => {
 
