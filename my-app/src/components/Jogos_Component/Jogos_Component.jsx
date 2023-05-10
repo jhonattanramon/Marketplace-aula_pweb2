@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./jogos_estilos.css";
 
 const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
@@ -9,7 +10,7 @@ const Jogos_component = ({produtos,onAddFavoritos,onAddDenuncia}) => {
     <> 
 
     <div className="title"><h1>JOGOS</h1></div>
- 
+    <Link to="jogos">Clique para ir a página de filmes</Link>
  <div className="card">
     {produtos.map(({ imagem, nome, descricao, preco, id }) => {
       return (

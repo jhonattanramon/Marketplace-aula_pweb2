@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
+import { Link } from "react-router-dom";
 
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);
+  const [contagem, setContagem] = useState(0);
 
   useEffect(() => {
 
@@ -45,6 +47,7 @@ const Filmes_component = (props) => {
 <div className="title">
         {" "}
         <h1>LAPTOPS</h1>
+        <Link to="filmes">Clique para ir a página de filmes</Link>
       </div>
       <div className="card">
         {laptops.map((laptop) => {

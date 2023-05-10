@@ -7,11 +7,9 @@ const Roupas_component = ({
   PropFavoritos,
 }) => {
 
-  // if (produtos.length === 0) {
-  //   return;
-  // }
-
-
+//  if (produtos.length === 0) {
+//     return;
+//   }
   const [contagem, setContagem] = useState(0)
 
   const [produtos, setProdutos] = useState([])
