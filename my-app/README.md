@@ -16,6 +16,7 @@
             <label>{contagem}</label>
         ```
     5.3 Na funçâo que trata o click do adicionar, incrementar a variável contagem com:
+        * Criar funçâo handleAddFavorito(produto)
         ```
             setContagem(contagem++);
         ```

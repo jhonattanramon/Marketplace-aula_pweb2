@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const Filter_Component = ({ favoritos, onAddFavoritos }) => {
-  const [valorDigitado, setValorDigitado] = useState(' ');
+  const [valorDigitado, setValorDigitado] = useState(' ' || 0);
 
   const filtrarMenoresValores = () => {
     if (valorDigitado === '') {

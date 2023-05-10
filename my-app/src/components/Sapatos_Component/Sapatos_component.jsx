@@ -1,45 +1,78 @@
+import { useEffect } from "react";
+import { useState } from "react";
 import "./sapatos.css";
 
-const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
+const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
+
+//passo 1 Hook - React UseState
+  const [contagem, setContagem] = useState(0);
+  const [sapatosMasculino, setSapatosMasculino] = useState(0);
+  
+  useEffect(() => {
+    const load =  async () => {
+      const result = await fetch('https://dummyjson.com/products/category/mens-shoes');
+      const resultJson = await result.json();
+    
+     const novaLista = resultJson.products.map( p => ({
+        id: p.id,
+        nome: p.title,
+        preco: p.price,
+        avaliacao: p.rating,
+        estoque: p.stock,
+        marca: p.brand,
+        imagem: p.thumbnail
+     }));
+      
+     setSapatosMasculino(novaLista);
+    }
+
+    load();
+  }, []);
+  
   if (produtos.length === 0) {
-    return;
+    return <></>;
+  }
+// passo 4 Hook - React UseState
+  function handleAddFavorito(produto){
+    setContagem(contagem+1);
+    onAddFavoritos(produto);
   }
 
   return (
 
     <>
-
-    <div className="title"><h1>SAPATOS</h1></div>
+    {/* passo 2  Hook - React UseState */}
+    {<div className="title"><h1>SAPATOS {contagem} </h1></div> }
     <div className="card">
-      {produtos.map(({ imagem, nome, descricao, preco, id }) => {
+      {sapatosMasculino.map((produto) => {
         return (
-          <section className="sectionContainer" key={id}>
+          <section className="sectionContainer" key={produto.id}>
             <div>
-              <img className="img" src={imagem} alt="" />
+              <img className="img" src={produto.imagem} alt="" />
             </div>
 
             <div className="divDescription">
-              <div>{nome} </div>
+              <div>{produto.nome} </div>
               <div>
                 <span>
                   {" "}
-                  <span> $: </span>
-                  {preco}
+                  <span> R$: </span>
+                  {produto.preco}
                 </span>
               </div>
 
               <div>
                 <button
                   onClick={() => {
-                  
-                    onAddFavoritos(produtos[Number(id) - 1]);
+                    // passo 3 Hook - React UseState
+                    handleAddFavorito(produto);
                   }}
                   >
                   Adicionar Favoritos
                 </button>
                 <button
                   onClick={() => {
-                    onAddDenuncia(produtos[Number(id) - 1]);
+                    onAddDenuncia(produto);
                   }}
                 >
                   Denunciar
