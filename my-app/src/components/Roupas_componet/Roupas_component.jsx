@@ -34,10 +34,7 @@ const Roupas_component = ({ produtos, setProps, PropFavoritos }) => {
               <div>
                 <button
                   onClick={() => {
-                    setProps([
-                      ...PropFavoritos,
-                      produtos.roupas[Number(id) - 1],
-                    ]);
+                    props.onAddDenuncia(props.produtos,roupas[0]);
                   }}
                 >
                   adicionar favoritos
