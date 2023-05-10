@@ -48,3 +48,30 @@
 
 
 7. Rotas - React-Router
+  
+  https://www.freecodecamp.org/news/how-to-use-react-router-version-6/
+
+  1. Instalar react-router-dom v6
+    ```
+      npm install react-router-dom 
+    ```
+  2. Config index.js
+    ```
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    ```
+  3. Criar componentes que serão páginas únicas
+    FilmesHome
+    JogosHome
+  
+  4. Definir rotas no App.js
+    ```
+      <Routes>
+        <Route path="/" element={<Marketplace/>}></Route>
+        <Route path="jogos" element={<JogosHomeComponent/>}></Route>
+        <Route path="filmes" element={<FilmesHomeComponent/>}></Route>
+      </Routes>
+    ```
+  5. Adicionar Link nos componentes para levar a outras páginas
+    <Link to="filmes">Clique para ir a página de filmes</Link>
