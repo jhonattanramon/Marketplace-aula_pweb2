@@ -25,9 +25,9 @@
   
   https://www.freecodecamp.org/news/how-to-use-react-router-version-6/
 
-  1. Instalar react-router-dom
+  1. Instalar react-router-dom v6
     ```
-      npm install react-router-dom
+      npm install react-router-dom 
     ```
   2. Config index.js
     ```

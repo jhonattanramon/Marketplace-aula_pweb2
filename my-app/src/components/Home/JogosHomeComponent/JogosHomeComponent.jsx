@@ -1,8 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function JogosHomeComponent() {
   return (
-    <div>JogosHomeComponent</div>
+    <>
+      <div>
+        <Link to="/">Voltar página inicial</Link>
+      </div>
+      <div>
+        JogosHomeComponent
+
+      </div>
+    </>
   )
 }
 

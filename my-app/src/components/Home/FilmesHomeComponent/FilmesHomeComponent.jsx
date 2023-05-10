@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FilmesHomeComponent() {
   return (
-    <div>FilmesHomeComponent</div>
+    <>
+      <Link to="/">Voltar página inicial</Link>
+      <div>FilmesHomeComponent</div>
+    </>
   )
 }
 

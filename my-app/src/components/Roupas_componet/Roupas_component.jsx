@@ -22,7 +22,6 @@ const Roupas_component = ({
     const responsive = await fetch('https://dummyjson.com/products/category/mens-shirts')
 
     const result = await responsive.json();   
-    console.log(result.products)
 
     const selectionProduct = result.products.map(({title, thumbnail, price, stock, rating}) => (
       {
