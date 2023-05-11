@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
-// import { useState } from "react";
+
 
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);
+  const [contagem, setContagem] = useState([]);
 
   useEffect(() => {
 
