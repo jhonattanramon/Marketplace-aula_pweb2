@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
 
+
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);

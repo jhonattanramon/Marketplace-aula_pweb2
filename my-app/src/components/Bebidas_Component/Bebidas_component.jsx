@@ -107,12 +107,12 @@ const Bebidas_component = (props) => {
       <div className="title">
       <h1>BEBIDA</h1>
       
-      <div className="card">
+      <div className="containerBebidas">
       
 
         {props.produtos.map((bebida) => {
           return (
-            <section className="sectionContainer" key={bebida.id}>
+            <section className="containerBebidas" key={bebida.id}>
               <div>
                 <img
                   className="img"
@@ -120,7 +120,7 @@ const Bebidas_component = (props) => {
                   alt="logo das marcas"
                 />
               </div>
-              <div className="divDescription">
+              <div className="cardH3">
                 <h3>
                   {bebida.nome} <br />
                 </h3>
@@ -130,7 +130,7 @@ const Bebidas_component = (props) => {
                   <h3>R${bebida.preco}</h3>
                 </div>
 
-              <div className="fav">
+              <div className="cardBbebidas1">
                 <button
                   className="buttonFav"
                   onClick={() => {
