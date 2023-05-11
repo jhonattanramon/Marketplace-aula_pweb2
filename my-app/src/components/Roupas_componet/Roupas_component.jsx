@@ -1,5 +1,6 @@
 import "./roupas.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const Roupas_component = ({
   
   onAddFavoritos,
@@ -58,6 +59,7 @@ const Roupas_component = ({
         }
           
         
+        
     })
 
     console.log(format);
@@ -75,13 +77,18 @@ const Roupas_component = ({
       <select name="select" onChange={(event) => {
         setOrdem(event.target.value)
 
+        
+
       }}>
+  
   <option value="valor1">Maior Preço</option>
   <option value="valor2" >Menor Preço</option>
   <option value="valor3">Mair estoque</option>
   <option value="valor4">Mais Avaliados</option>
 </select>
       </div>
+
+      <Link to="RoupasHome">Clique para ir a página de filmes</Link>
 
     <div className="card">
 
