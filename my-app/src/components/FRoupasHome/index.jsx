@@ -59,7 +59,7 @@ const FRoupasHome = () =>{
             </select>
           </div>
          
-          <Link to="FRoupasHome">Clique para ir a página de Roupas Femininas</Link>
+          <Link to="/">Clique para voltar a página inicial</Link>
     
     
         <div className="card">
