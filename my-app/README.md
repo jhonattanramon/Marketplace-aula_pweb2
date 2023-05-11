@@ -40,12 +40,143 @@
     JogosHome
   
   4. Definir rotas no App.js
-    ```
+    ``
       <Routes>
         <Route path="/" element={<Marketplace/>}></Route>
         <Route path="jogos" element={<JogosHomeComponent/>}></Route>
         <Route path="filmes" element={<FilmesHomeComponent/>}></Route>
       </Routes>
-    ```
+    ``
   5. Adicionar Link nos componentes para levar a outras páginas
     <Link to="filmes">Clique para ir a página de filmes</Link>
+
+  ## Recursos mais dinâmicos com rotas
+  6. Parametros dinâmicos:
+    ``` jsx
+      <Route path="/books/:id" element={<Book />} />
+    ```
+
+    ``` js
+      const { id } = useParams()
+    ```
+  7. Rota default - não encontrada
+    ``` jsx
+      <Route path="*" element={<NotFound />} />
+    ```
+  8. Nested Routes
+    ``` 
+App.jsx
+      <Routes>
+        <Route path="/" element={<Marketplace />} />
+        <Route path="/filmes">
+          <Route index element={<FilmesPageComponent />} />
+          <Route path=":id" element={<FilmeDetalhesComponent />} />
+          <Route path="new" element={<FilmeFormComponent />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    ```
+  9. Layout Compartilhados
+  
+    ```
+App.jsx
+    <Routes>
+      <Route path="/" element={<Marketplace />} />
+      <Route path="/filmes" element={<ProdutosHomeLayout />}>
+        <Route index element={<FilmesPageComponent />} />
+        <Route path=":id" element={<FilmeDetalhesComponent />} />
+        <Route path="new" element={<FilmeFormComponent />} />
+      </Route>
+      <Route element={<OtherLayout />}>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  ```
+
+```
+.js
+  import { Link, Outlet } from "react-router-dom"
+
+  export function ProdutosHomeLayout() {
+    return (
+      <>
+        <nav>
+          <ul>
+            <li><Link to="/filmes">Filmes</Link></li>
+            <li><Link to="/jogos">Jogos</Link></li>
+            <li><Link to="/sapatos">Sapatos</Link></li>
+          </ul>
+        </nav>
+
+        <Outlet />
+      </>
+    )
+  }
+
+```
+
+### Extras
+
+1. Nested Routes
+```
+.jsx
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/books/*" element={<BookRoutes />} />
+  <Route path="*" element={<NotFound />} />
+</Routes>
+```
+
+```
+.JSX
+
+  import { Routes, Route } from "react-router-dom"
+  import { BookList } from "./pages/BookList"
+  import { Book } from "./pages/Book"
+  import { NewBook } from "./pages/NewBook"
+  import { BookLayout } from "./BookLayout"
+
+  export function BookRoutes() {
+    return (
+      <Routes>
+        <Route element={<BookLayout />}>
+          <Route index element={<BookList />} />
+          <Route path=":id" element={<Book />} />
+          <Route path="new" element={<NewBook />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    )
+  }
+```
+
+## Manual Navigation
+
+### useNavigation Hook
+
+``` .JS
+  const navigate = useNavigate()
+
+  function onSubmit() {
+    // Submit form results
+    navigate("/books", { replace: true, state: { bookName: "Fake Title" }})
+  }
+```
+
+Use the useNavigate hook:
+
+```
+.JSX
+  const navigate = useNavigate();
+  navigate('/other-page', { state: { id: 7, color: 'green' } });
+```
+Then, you can access the state data in '/other-page' via the useLocation hook:
+
+```
+  .JSX
+  const {state} = useLocation();
+  const { id, color } = state; // Read values passed on state
+```
+
