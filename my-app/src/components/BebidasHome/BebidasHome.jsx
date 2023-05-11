@@ -10,7 +10,7 @@ const BebidasHome = (props) => {
 
   useEffect( () => {
     const load = async () => {
-      const resultJson = await fetch("https://dummyjson.com/products/category/groceries");
+      const resultJson = await fetch("https://dummyjson.com/products/category/motorcycle");
 
       const resultProduct = await resultJson.json();
       let resultFormatado = resultProduct.products.map(({ id, title, price, thumbnail, rating, stock }) => ({
