@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./bebidas.css";
+import {Link} from 'react-router-dom'
 
 const Bebidas_component = (props) => {
 
@@ -51,6 +52,8 @@ const Bebidas_component = (props) => {
             <option value="avaliacao">Avaliação</option>
           </select>
         </div>
+        <Link to="BebidasHome">Clique para ir a página de bebidas</Link>
+
         <div className="card">
         {mantimentos.map((produto) => {
           return (
