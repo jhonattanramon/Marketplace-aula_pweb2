@@ -53,7 +53,7 @@ const Smartphone_Component = (props) => {
           </select>
         </div>
 
-        <Link to="SmartphonePage_component">Página de Celulares</Link>
+        <Link to="RelogioPageComponent">Página de Relógios</Link>
 
       <div className="card">
         {celulares.map((produto) => {
