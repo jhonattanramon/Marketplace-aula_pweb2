@@ -51,7 +51,7 @@ const Smartphone_Component = (props) => {
             <option value="estoque">Estoque</option>
           </select>
         </div>
-        <div className="card">
+      <div className="card">
         {celulares.map((produto) => {
           return (
             <section className="container" key={produto.id}>
@@ -102,7 +102,7 @@ const Smartphone_Component = (props) => {
           );
         })}
       </div>
-      </div>
+    </div>
 
       <div className="title">
       <h1>CELULARES</h1>
