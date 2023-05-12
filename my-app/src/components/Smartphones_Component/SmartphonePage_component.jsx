@@ -46,7 +46,7 @@ const [ordem, setOrdem] = useState("avaliacao");
           </select>
           </div>
          
-          <Link to="SmartphonePage_component">Página de Smartphones</Link>
+          <Link to="Smartphone_component">Voltar para página de Smartphones</Link>
     
           <div className="card">
         {celulares.map((produto) => {

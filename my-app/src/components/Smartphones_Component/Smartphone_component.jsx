@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 import "./Smartphone.css";
 
 const Smartphone_Component = (props) => {
@@ -51,6 +52,9 @@ const Smartphone_Component = (props) => {
             <option value="estoque">Estoque</option>
           </select>
         </div>
+
+        <Link to="SmartphonePage_component">Página de Celulares</Link>
+
       <div className="card">
         {celulares.map((produto) => {
           return (
