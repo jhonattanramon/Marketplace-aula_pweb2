@@ -44,7 +44,7 @@ const BebidasHome = (props) => {
         <Link to="/">Clique para ir a página inicial</Link>
 
       <div className="title">
-        <h1>BEBIDA</h1>
+        <h1>Motocicleta</h1>
 
         <div className="card">
 
