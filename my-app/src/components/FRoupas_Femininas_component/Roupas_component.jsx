@@ -22,7 +22,7 @@ const FRoupas_Femininas_component = ({
         const resultProduct = await resultJson.json();
         
         const result = resultProduct.products
-        console.log(result);
+        
 
         let api = result.map(({ id, title, price, thumbnail, stock, rating }) => ({
           id: id,
