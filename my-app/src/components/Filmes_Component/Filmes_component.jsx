@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./filmes.css";
 import { Link } from "react-router-dom";
 
+
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);
