@@ -1,0 +1,75 @@
+.containerBebidas {
+  display: flex;
+gap: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: Arial;
+
+}
+
+.cardBebidas {
+  
+
+  height: 100%;
+  
+  font-size: 16px;
+}
+
+.cardH3{
+  color: rgb(255, 255, 255);
+  flex-direction:column;
+  text-align: left;
+
+  background-color: 	#484d50;
+}
+.cardInfo {
+  text-align: right;
+
+}
+.cardBebidas1{
+  width: 150px;
+  height: 150px;
+
+  border-radius: 30px 30px 0px 0px;
+}
+
+
+
+
+
+
+
+.buttonFav {
+  border-style: solid 1px;
+  background: #dee046fd;
+  font-size: 16px;
+font-weight: bolder;
+width: 100%;
+color: white;
+cursor: pointer;
+
+}
+
+.buttonDen {
+  border-style: solid 1px;
+  background-color: #dd0c0c;
+  font-size: 16px;  
+font-weight: bolder;
+width: 100%;
+color: white;
+cursor: pointer;
+}
+
+.buttonDen:hover {
+  background-color: #0056b3; /* nova cor de fundo do botão no hover */
+}
+
+.buttonFav:hover {
+  background-color: #0056b3; /* nova cor de fundo do botão no hover */
+}
+
+
+h3{
+  margin: 0px;
+
+}
