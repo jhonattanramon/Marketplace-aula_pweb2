@@ -13,6 +13,11 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+    "v6": "^0.0.0",
+=======
+    "router-dom": "^2.2.11",
+>>>>>>> 2b29db153f29055783e4c461f302d840ce9826bc
     "web-vitals": "^2.1.4"
   },
   "scripts": {

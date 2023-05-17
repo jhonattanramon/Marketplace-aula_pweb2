@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import "./sapatos.css";
 import {Link} from 'react-router-dom'
 
 const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
@@ -46,7 +45,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
     
     <div className="title">
       <h1>SAPATOS {contagem} </h1>
-      <Link to = 'SapatosHome'>Ir para Sapatos Home</Link>
+      <Link to="filmes  ">Clique para ir a página de filmes</Link>
     </div> 
     <div className="card">
       {sapatosMasculino.map((produto) => {

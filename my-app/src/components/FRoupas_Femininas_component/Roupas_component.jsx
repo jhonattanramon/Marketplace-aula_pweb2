@@ -26,7 +26,7 @@ const FRoupas_Femininas_component = ({
         const resultProduct = await resultJson.json();
         
         const result = resultProduct.products
-        console.log(result);
+        
 
         let api = result.map(({ id, title, price, thumbnail, stock, rating }) => ({
           id: id,
@@ -57,7 +57,7 @@ const FRoupas_Femininas_component = ({
         
         <select name="opt" id="iopt">
 
-                <option value="" selected>----Escolha----</option>
+                <option value="seila" selected>----Escolha----</option>
                   <optgroup label="Filtrar">
                     <option value="mpreco">Menor Preço</option>
                     <option value="mestoque">Mais estoque</option>

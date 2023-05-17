@@ -11,6 +11,8 @@ import Bebidas_component from "../Bebidas_Component/Bebidas_component";
 import Favoritos_component from "../Favoritos_Component/Favoritos_component";
 import Denuncia_component from "../Denuncia_component.s/Denuncia_component";
 import Smartphone_Component from "../Smartphones_Component/Smartphone_component";
+import FavoritosHome from "../Home/favoritos/FavoritosHome";
+
 
 const Marketplace = () => {
   const [produtos, setProdutos] = useState([]);
