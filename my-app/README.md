@@ -74,8 +74,6 @@
       </Routes>
     ``
   5. Adicionar Link nos componentes para levar a outras páginas
-<<<<<<< HEAD
-=======
     <Link to="filmes">Clique para ir a página de filmes</Link>
 
 # Recursos mais dinâmicos com rotas
@@ -206,7 +204,7 @@ Definindo novos arquivos de rotas para melhor separação de conceitos;
 
     
 
-# EXTRAS 
+# EXTRAS - tarefa do select (com ordernação ) UseState
 
   1. Tarefa de useState, com select
     a. Interface
@@ -258,4 +256,3 @@ Definindo novos arquivos de rotas para melhor separação de conceitos;
             }
         }, [ordem]);
     ```
->>>>>>> 2b29db153f29055783e4c461f302d840ce9826bc
