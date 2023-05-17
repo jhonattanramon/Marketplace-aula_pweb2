@@ -1,5 +1,6 @@
 import "./roupas.css";
 import { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 const Roupas_component = ({
   
@@ -55,14 +56,15 @@ console.log(produtos);
 
   //    function loading (params) {
 
-  //      const format = produtos.sort(function(a,b){
+
+       const format = produtos.sort(function(a,b){
       
-           
-  //       if(true){
-  //         return -1
-  //       }else{
-  //        return 0
-  //       }
+        if(true){
+          return -1
+        }else{
+         return 0
+        }
+
           
         
         
@@ -102,6 +104,13 @@ console.log(produtos);
 
     <div className="card">
 
+
+      <div 
+      >
+        <Link style={{ color: 'black'}}
+        to="/favoritos"
+        >navegaaaaaaaaaa</Link>
+      </div>
    
 
 
