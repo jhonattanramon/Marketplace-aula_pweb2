@@ -2,6 +2,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import RoupasHome from "./components/RoupasHome/RoupasHome"
+
+
 import FRoupasHome from "./components/FRoupasHome";
 import BebidasHome from "./components/BebidasHome/BebidasHome"
 
@@ -14,17 +17,16 @@ import LaptopPageComponent from "./components/Filmes_Component/LaptopPageCompone
 function App() {
   
   return(
-
-  <Routes>
+    <Routes>
     <Route path="/" element={<Marketplace/>}></Route>
+    <Route path="/RoupasHome" element={<RoupasHome/>}></Route>
     <Route path="filmes" element={<LaptopPageComponent/>}></Route>
- 
-        <Route path="/" element={<Marketplace/>}></Route>
-        <Route path="FRoupasHome" element={<FRoupasHome/>}></Route>
-        <Route path="/BebidasHome" element={<BebidasHome/>}></Route>
+    <Route path="FRoupasHome" element={<FRoupasHome/>}></Route>
+    <Route path="/BebidasHome" element={<BebidasHome/>}></Route>
       </Routes>
 
   )
+
 }
 
 export default App;

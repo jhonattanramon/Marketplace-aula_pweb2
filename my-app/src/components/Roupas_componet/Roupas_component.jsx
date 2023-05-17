@@ -1,7 +1,9 @@
 import "./roupas.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Roupas_component = ({
   
+
   onAddFavoritos,
   onAddDenuncia,
   PropFavoritos,
@@ -12,11 +14,18 @@ const Roupas_component = ({
   // }
 
 
+  const navigate = useNavigate(); 
+
+  const roupasHomee = () => {
+    navigate("/RoupasHome", {state : { rh : produtos}})
+  }
+
+
   const [contagem, setContagem] = useState(0)
 
   const [produtos, setProdutos] = useState([])
-
-  const [ordem, setOrdem] = useState('preco')
+console.log(produtos);
+//  const [ordem, setOrdem] = useState('preco')
 
   useEffect (() => {
 
@@ -42,46 +51,54 @@ const Roupas_component = ({
   },[]);
 
 
-  useEffect (() =>{
+  // useEffect (() =>{
 
-     function loading (params) {
+  //    function loading (params) {
 
-        console.log(produtos);
-       const format = produtos.sort(function(a,b){
+  //      const format = produtos.sort(function(a,b){
       
-        console.log(a.preco);
-        console.log(b.preco);        
-        if(true){
-          return -1
-        }else{
-         return 0
-        }
+           
+  //       if(true){
+  //         return -1
+  //       }else{
+  //        return 0
+  //       }
           
         
-    })
+        
+  //   })
 
-    console.log(format);
+
      
      
       
-     } 
-      loading()
-  },[ordem])
+  //    } 
+  //     loading()
+  // },)
   
   return (
 
     <> 
       <div className="title"> <h1>ROUPAS <label> {contagem}</label></h1> 
       <select name="select" onChange={(event) => {
-        setOrdem(event.target.value)
+        //setOrdem(event.target.value)
+
+        
 
       }}>
+  
   <option value="valor1">Maior Preço</option>
   <option value="valor2" >Menor Preço</option>
   <option value="valor3">Mair estoque</option>
   <option value="valor4">Mais Avaliados</option>
 </select>
       </div>
+
+
+
+<div>
+  <button onClick={() => roupasHomee()}>VEM LOGO KRL</button>
+</div>
 
     <div className="card">
 
