@@ -74,4 +74,3 @@
       </Routes>
     ```
   5. Adicionar Link nos componentes para levar a outras páginas
-    <Link to="filmes">Clique para ir a página de filmes</Link>
