@@ -1,7 +1,7 @@
 import "./roupas.css";
 import { useState, useEffect } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Roupas_component = ({
   
 
@@ -52,9 +52,9 @@ console.log(produtos);
   },[]);
 
 
-  // useEffect (() =>{
+  useEffect (() =>{
 
-  //    function loading (params) {
+     function loading (params) {
 
 
        const format = produtos.sort(function(a,b){
@@ -68,15 +68,15 @@ console.log(produtos);
           
         
         
-  //   })
+    })
 
 
      
      
       
-  //    } 
-  //     loading()
-  // },)
+     } 
+      loading()
+  })
   
   return (
 
