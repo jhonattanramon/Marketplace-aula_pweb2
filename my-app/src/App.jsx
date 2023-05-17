@@ -4,10 +4,8 @@ import { Routes, Route } from "react-router-dom"
 //component
 import Marketplace from "./components/Marketplace";
 import Sapatos_component from "./components/SapatosHome/SapatosHomeComponent";
-import { Routes, Route } from "react-router-dom";
 
 //component
-import Marketplace from "./components/Marketplace";
 import FavoritosHome from "./components/Home/favoritos/FavoritosHome";
 import Favoritos_component from "./components/Favoritos_Component/Favoritos_component"; 
 import RoupasHome from "./components/RoupasHome/RoupasHome"
