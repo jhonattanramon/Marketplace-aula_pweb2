@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
+import { Link } from "react-router-dom";
 
 
 const Filmes_component = (props) => {
@@ -44,16 +45,17 @@ const Filmes_component = (props) => {
 
     <>
 
-<div className="title">
+    <div className="title">
         {" "}
         <h1>LAPTOPS</h1>
+        <Link to="filmes"> Ir para página de filmes</Link>
       </div>
       <div className="card">
         {laptops.map((laptop) => {
           return (
             <section className="sectionContainer" key={laptop.id}>
-              <div>
-                <img className="img" src={laptop.imagem} />
+              <div className="img1" >
+                <img src={laptop.imagem} />
               </div>
 
               <div className="divDescription">
