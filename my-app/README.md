@@ -15,11 +15,37 @@
         ```
             <label>{contagem}</label>
         ```
-    5.3 Na função que trata o click do adicionar, incrementar a variável contagem com:
+    5.3 Na funçâo que trata o click do adicionar, incrementar a variável contagem com:
+        * Criar funçâo handleAddFavorito(produto)
         ```
             setContagem(contagem++);
         ```
-6. Hook - React useEffect *
+6. Hook - React useEffect * 
+
+    Usando a api:
+
+    https://dummyjson.com/docs/products
+
+    ------Primeira parte-----
+
+    6.1 Criar um useEffect dentro do seu compomente que faz um fecth para a api acima, listando a sua categoria. Por exemplo, 
+
+    https://dummyjson.com/products/category/womens-shoes
+
+    * Caso não tenha a sua categoria, utilize uma categoria próxima a seu critério. Ou ainda, busque uma caso julgue necessário.
+
+    6.2 Realize um map para transformar o resultado no formato adequado. Assim como é feito na classe PAI(Marketplace).
+
+    6.3 Coloque o resultado dos produtos numa variável e exiba na lista abaixo da lista anterior;
+
+    ------ Segunda parte ------
+    
+    6.1 Criar um SELECT com as opções de ordenação de produto, mais estoque, menor preço, maior preço, mais bem avaliados
+
+    6.2 Na alteração do select, alterar o valor de uma variável controlado por useState;
+
+    6.3 Criar um useEffect que escuta essa variável, e faz uma reordenação do array, e o atualiza usando seu set do useState;
+
 
 7. Rotas - React-Router
   
@@ -51,12 +77,17 @@
     ``
   5. Adicionar Link no seu componente, por exemplo, TecnologiaComponent para levar a outras páginas. Ex.: Dentro do return, próximo do título
 
+
+  5. Adicionar Link nos componentes para levar a outras páginas
+
+
     <Link to="filmes">Clique para ir a página de filmes</Link>
 
 # Recursos mais dinâmicos com rotas
   6. Parametros dinâmicos:
     Passando parâmetros pelas rotas:
     ``` jsx
+
       <Route path="/produto/:id" element={<ProdutoHomeComponent />} />
     ```
     * Obs.: Criar o componente ProdutoHomeComponent;
@@ -180,3 +211,57 @@ Definindo novos arquivos de rotas para melhor separação de conceitos;
   const { id, color } = state; // Read values passed on state
 ```
 
+    
+
+# EXTRAS 
+
+  1. Tarefa de useState, com select
+    a. Interface
+        Criar componente <select> com as opções de ordenação.
+        ```
+            <select>
+                <option value="">Ordenar por</option>
+                <option value="nome">Nome</option>
+                <option value="preco">Preço</option>
+                <option value="avaliacao">Avaliaçâo</option>
+            </select>
+        ```
+    b. Criar uma variavel que observa a mudança do critério de ordenação
+    ``` jsx
+        const [ordem, setOrdem] = useState(null);
+    ```
+
+    c. Disparar mudança para ao mudar o select, mudar o atributo de ordenação
+    ```jsx
+        <select onChange={(evt) => setOrdem(evt.target.value)}>
+            <option value="">Ordenar por</option>
+            <option value="nome">Nome</option>
+            <option value="preco">Preço</option>
+            <option value="avaliacao">Avaliaçâo</option>
+        </select>
+    ```
+
+    d. Criar um useEffect que escuta as mudanças no ordem:
+    ``` jsx
+         useEffect(() => {
+
+            console.log('ordenar ' + ordem);
+           
+        
+        }, [ordem]);
+    ```
+
+    e. Com a nova ordem, ordenar a lista
+
+    ``` jsx
+        useEffect(() => {
+            if(listaBrinquedos?.length >0){
+                const listaOrdenada = listaBrinquedos.sort(function(a,b) {
+                    return (a[ordem] < b[ordem]) ? -1 : (a[ordem] > b[ordem]) ? 1 : 0;
+                });
+
+                console.log(listaBrinquedos);
+                setListaBrinquedos([...listaOrdenada]);
+            }
+        }, [ordem]);
+    ```
