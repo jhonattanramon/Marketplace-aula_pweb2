@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./sapatos.css";
-import {Link} from 'react-router-dom'
 
 const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
 
@@ -67,6 +67,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
               </div>
 
               <div>
+                <Link to={`produto/${produto.id}`}>Ver detalhes</Link>
                 <button
                   onClick={() => {
                     // passo 3 Hook - React UseState

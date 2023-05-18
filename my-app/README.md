@@ -62,8 +62,10 @@
       </BrowserRouter>
     ```
   3. Criar componentes que serão páginas únicas
-    FilmesHome
-    JogosHome
+    FilmesHomeComponent
+    JogosHomeComponent
+
+    * usar plugin... (rfce + rfce)
   
   4. Definir rotas no App.js
     ``
@@ -73,6 +75,9 @@
         <Route path="filmes" element={<FilmesHomeComponent/>}></Route>
       </Routes>
     ``
+  5. Adicionar Link no seu componente, por exemplo, TecnologiaComponent para levar a outras páginas. Ex.: Dentro do return, próximo do título
+
+
   5. Adicionar Link nos componentes para levar a outras páginas
 
     <Link to="filmes">Clique para ir a página de filmes</Link>
@@ -81,9 +86,11 @@
   6. Parametros dinâmicos:
     Passando parâmetros pelas rotas:
     ``` jsx
-      <Route path="/books/:id" element={<Book />} />
-    ```
 
+      <Route path="/produto/:id" element={<ProdutoHomeComponent />} />
+    ```
+    * Obs.: Criar o componente ProdutoHomeComponent;
+    * Dentro de ProdutoHomeComponent, recuperar os parâmetros
     ``` js
       const { id } = useParams()
     ```
