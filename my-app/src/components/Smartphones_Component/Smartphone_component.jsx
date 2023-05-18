@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import "./bebidas.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom"
+import "./Smartphone.css";
 
-const Bebidas_component = (props) => {
+const Smartphone_Component = (props) => {
 
-  const [mantimentos, setMantimentos] = useState([]);
-  const [ordem, setOrdem] = useState("preco");
+  const [celulares, setCelulares] = useState([]);
+  const [ordem, setOrdem] = useState("avaliacao");
 
   useEffect( () => {
     const load = async () => {
-      const resultJson = await fetch("https://dummyjson.com/products/category/groceries");
+      const resultJson = await fetch("https://dummyjson.com/products/category/smartphones");
 
       const resultProduct = await resultJson.json();
       let resultFormatado = resultProduct.products.map(({ id, title, price, thumbnail, rating, stock }) => ({
@@ -21,8 +21,8 @@ const Bebidas_component = (props) => {
         estoque: stock,
       }));
 
-      setMantimentos(resultFormatado);
-      console.log(mantimentos)
+      setCelulares(resultFormatado);
+      console.log(celulares)
     };
 
     load();
@@ -30,10 +30,10 @@ const Bebidas_component = (props) => {
 
 
   useEffect(()=> {
-    const lista = mantimentos.slice();
-    lista.sort((m1, m2) => m2[ordem] > m1[ordem] ? 1 : m2[ordem] < m1[ordem] ? -1:0 );
+    const lista = celulares.slice();
+    lista.sort((c1, c2) => c2[ordem] > c1[ordem] ? 1 : c2[ordem] < c1[ordem] ? -1:0 );
     console.log('order: '+ ordem);
-    setMantimentos(lista);
+    setCelulares(lista);
   }, [ordem])
 
   if (props.produtos.length === 0) {
@@ -44,20 +44,21 @@ const Bebidas_component = (props) => {
     <>
       <div className="title">
     
-        <h1>GROCERIES</h1>
+        <h1>SMARTPHONES</h1>
         <div>
           <select onChange={(event) => setOrdem(event.target.value)}>
+            <option value="avaliacao">Avaliação</option>
             <option value="preco">Preço</option>
             <option value="estoque">Estoque</option>
-            <option value="avaliacao">Avaliação</option>
           </select>
         </div>
-        <Link to="BebidasHome">Clique para ir a página de bebidas</Link>
 
-        <div className="card">
-        {mantimentos.map((produto) => {
+        <Link to="RelogioPageComponent">Página de Relógios</Link>
+
+      <div className="card">
+        {celulares.map((produto) => {
           return (
-            <section className="sectionContainer" key={produto.id}>
+            <section className="container" key={produto.id}>
               <div>
                 <img
                   className="img"
@@ -105,40 +106,40 @@ const Bebidas_component = (props) => {
           );
         })}
       </div>
-      </div>
+    </div>
 
       <div className="title">
-      <h1>BEBIDA</h1>
+      <h1>CELULARES</h1>
       
-      <div className="containerBebidas">
+      <div className="card">
       
 
-        {props.produtos.map((bebida) => {
+        {props.produtos.map((celular) => {
           return (
-            <section className="containerBebidas" key={bebida.id}>
+            <section className="sectionContainer" key={celular.id}>
               <div>
                 <img
                   className="img"
-                  src={bebida.imagem}
-                  alt="logo das marcas"
+                  src={celular.imagem}
+                  alt="logo"
                 />
               </div>
-              <div className="cardH3">
+              <div className="divDescription">
                 <h3>
-                  {bebida.nome} <br />
+                  {celular.nome} <br />
                 </h3>
 
                 <div className="cardInfo">
-                  <h3>{bebida.descricao}</h3>
-                  <h3>R${bebida.preco}</h3>
+                  <h3>{celular.descricao}</h3>
+                  <h3>R${celular.preco}</h3>
                 </div>
 
-              <div className="cardBbebidas1">
+              <div className="fav">
                 <button
                   className="buttonFav"
                   onClick={() => {
                     props.onAddFavoritos(
-                      props.produtos[Number(bebida.id - 1)]
+                      props.produtos[Number(celular.id - 1)]
                       );
                     }}
                     >
@@ -151,7 +152,7 @@ const Bebidas_component = (props) => {
                 <button 
                 onClick={ () => {
                   props.onAddDenuncia(
-                    props.produtos[Number(bebida.id - 1)]
+                    props.produtos[Number(celular.id - 1)]
                   )
                 }}
                 className="buttonDen">DENUNCIAR</button>
@@ -166,4 +167,4 @@ const Bebidas_component = (props) => {
   );
 };
 
-export default Bebidas_component;
+export default Smartphone_Component;

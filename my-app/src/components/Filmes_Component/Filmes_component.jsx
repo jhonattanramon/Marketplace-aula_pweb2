@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import "./filmes.css";
+import { Link } from "react-router-dom";
+
 
 const Filmes_component = (props) => {
 
   const [laptops, setLaptops] = useState([]);
   const [contagem, setContagem] = useState([]);
+  const [ordem,  setOrdem] = useState("avaliacao");
 
   useEffect(() => {
 
@@ -32,10 +35,16 @@ const Filmes_component = (props) => {
     load();
   }, []);
 
+  useEffect(()=> {
+    const lista = laptops.slice();
+    lista.sort((c1, c2) => c2[ordem] > c1[ordem] ? 1 : c2[ordem] < c1[ordem] ? -1:0 );
+    console.log('order: '+ ordem);
+    setLaptops(lista);
+  }, [ordem])
+
   if (props.produtos.length === 0) {
     return;
   }
-
 
   const setProps = props.setProps;
 
@@ -43,16 +52,27 @@ const Filmes_component = (props) => {
 
     <>
 
-<div className="title">
+    <div className="title">
         {" "}
         <h1>LAPTOPS</h1>
+        <Link to="filmes"> Ir para página de filmes</Link>
       </div>
-      <div className="card">
+
+      <div>
+      <label for="filtro">Filtrar:</label>
+          <select onChange={(event) => setOrdem(event.target.value)}>
+            <option value="avaliacao">Avaliação</option>
+            <option value="preco">Preço</option>
+            <option value="estoque">Estoque</option>
+          </select>
+      </div> 
+
+      <div className="cardFilmes">
         {laptops.map((laptop) => {
           return (
             <section className="sectionContainer" key={laptop.id}>
-              <div>
-                <img className="img" src={laptop.imagem} />
+              <div className="img1" >
+                <img src={laptop.imagem} />
               </div>
 
               <div className="divDescription">
