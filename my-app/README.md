@@ -36,8 +36,10 @@
       </BrowserRouter>
     ```
   3. Criar componentes que serão páginas únicas
-    FilmesHome
-    JogosHome
+    FilmesHomeComponent
+    JogosHomeComponent
+
+    * usar plugin... (rfce + rfce)
   
   4. Definir rotas no App.js
     ``
@@ -47,23 +49,28 @@
         <Route path="filmes" element={<FilmesHomeComponent/>}></Route>
       </Routes>
     ``
-  5. Adicionar Link nos componentes para levar a outras páginas
+  5. Adicionar Link no seu componente, por exemplo, TecnologiaComponent para levar a outras páginas. Ex.: Dentro do return, próximo do título
+
     <Link to="filmes">Clique para ir a página de filmes</Link>
 
-  ## Recursos mais dinâmicos com rotas
+# Recursos mais dinâmicos com rotas
   6. Parametros dinâmicos:
+    Passando parâmetros pelas rotas:
     ``` jsx
-      <Route path="/books/:id" element={<Book />} />
+      <Route path="/produto/:id" element={<ProdutoHomeComponent />} />
     ```
-
+    * Obs.: Criar o componente ProdutoHomeComponent;
+    * Dentro de ProdutoHomeComponent, recuperar os parâmetros
     ``` js
       const { id } = useParams()
     ```
   7. Rota default - não encontrada
+    Configurando uma rota default:
     ``` jsx
       <Route path="*" element={<NotFound />} />
     ```
   8. Nested Routes
+    Agrupamento de rotas:
     ``` 
 App.jsx
       <Routes>
@@ -77,6 +84,7 @@ App.jsx
       </Routes>
     ```
   9. Layout Compartilhados
+    Ex.: Criar uma área comum, por exemplo cabeçalho e/ou rodapé para diferentes componentes 
   
     ```
 App.jsx
@@ -117,9 +125,10 @@ App.jsx
 
 ```
 
-### Extras
+## Extras
 
 1. Nested Routes
+Definindo novos arquivos de rotas para melhor separação de conceitos;
 ```
 .jsx
 <Routes>
@@ -156,7 +165,7 @@ App.jsx
 
 ### useNavigation Hook
 
-``` .JS
+``` .JSx
   const navigate = useNavigate()
 
   function onSubmit() {
@@ -165,17 +174,8 @@ App.jsx
   }
 ```
 
-Use the useNavigate hook:
-
 ```
-.JSX
-  const navigate = useNavigate();
-  navigate('/other-page', { state: { id: 7, color: 'green' } });
-```
-Then, you can access the state data in '/other-page' via the useLocation hook:
-
-```
-  .JSX
+  .JS
   const {state} = useLocation();
   const { id, color } = state; // Read values passed on state
 ```

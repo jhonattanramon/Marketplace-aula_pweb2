@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./sapatos.css";
 
 const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
@@ -9,7 +10,10 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
 
     <>
 
-    <div className="title"><h1>SAPATOS</h1></div>
+    <div className="title">
+      <h1>SAPATOS</h1>
+      <Link to="sapatos">Sapatos</Link>  
+    </div>
     <div className="card">
       {produtos.map(({ imagem, nome, descricao, preco, id }) => {
         return (
@@ -29,6 +33,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos }) => {
               </div>
 
               <div>
+                <Link to={`produto/${id}`}>Ver detalhes</Link>
                 <button
                   onClick={() => {
                   
