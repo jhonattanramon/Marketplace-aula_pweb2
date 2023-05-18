@@ -116,12 +116,12 @@ const Marketplace = () => {
       </div>
 
       <div className="box2">
-        {/* <Sapatos_component
+        <Sapatos_component
           produtos={produtos}
           PropFavoritos={favoritos}
           onAddDenuncia={addDenunciados}
           onAddFavoritos={addFavoritos}
-        /> */}
+        />
       </div>
 
       <div className="box2">
