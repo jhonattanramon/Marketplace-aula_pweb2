@@ -12,19 +12,19 @@ import Favoritos_component from "./components/Favoritos_Component/Favoritos_comp
 import RoupasHome from "./components/RoupasHome/RoupasHome"
 
 //component
-import Marketplace from "./components/Marketplace";
+
 import CarrosPageComponent from "./components/Carros_component/CarrosPageComponent";
 import SapatosHomeComponent from "./components/Sapatos_Component/SapatosHomeComponent";
 import ProdutoHomeComponent from "./components/ProdutoHome/ProdutoHomeComponent";
 import PaginaNaoEncontradaComponent from "./components/PaginaNaoEncontrada/PaginaNaoEncontradaComponent";
-import Sapatos_component from "./components/SapatosHome/SapatosHomeComponent";
+
 import FilmeDetalhesPage from "./components/Filmes_Component/FilmeDetalhesPage";
 
 import RelogioPageComponent from "./components/RelogioPageComponent/RelogioPageComponent";
 
 // import FavoritosHome from "./components/Home/favoritos/FavoritosHome";
-import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
-import RoupasHome from "./components/RoupasHome/RoupasHome";
+
+
 import FRoupasHome from "./components/FRoupasHome";
 import BebidasHome from "./components/BebidasHome/BebidasHome";
 //component
