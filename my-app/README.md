@@ -68,8 +68,8 @@
 ```
 ### 7.2 Criar
 4. Criar componentes que serão páginas únicas
-    * FilmesHome
-    * JogosHome
+    * FilmeHomeComponent
+    * JogosHomeComponent
   
 5. Definir rotas no App.js
 ```
@@ -93,9 +93,13 @@ App.jsx
   <Route path="/books/:id" element={<Book />} />
 ```
 
+Em um componente qualquer, por exemplo, FilmeHomeComponent.jsx
+```
+    <Link to={`/filme/${filme.id}`}>{filme.nome}</Link>
+```
 No seu componente, recuperar o parâmetro
 Ler o parâmetro no código, também criando a variável que armazenará o produto:
-Ex.: ProdutoInformaticaPage.jsx
+Ex.: FilmeDetalhesPage.jsx
 ```
   const { id } = useParams();
   const { produto, setProduto } = useState(null);
