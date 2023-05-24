@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./bebidas.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Bebidas_component = (props) => {
 
@@ -45,6 +45,7 @@ const Bebidas_component = (props) => {
       <div className="title">
     
         <h1>GROCERIES</h1>
+        <Link to="/carros">Clique aqui e acesse carros</Link>
         <div>
           <select onChange={(event) => setOrdem(event.target.value)}>
             <option value="preco">Preço</option>
