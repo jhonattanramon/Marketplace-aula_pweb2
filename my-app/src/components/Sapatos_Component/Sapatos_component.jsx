@@ -24,7 +24,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
         
         }, [ordem]);
 
-        
+          
 
 
 
