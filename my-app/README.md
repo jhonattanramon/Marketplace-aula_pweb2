@@ -99,7 +99,7 @@ Em um componente qualquer, por exemplo, FilmeHomeComponent.jsx
 ```
 No seu componente, recuperar o parâmetro
 Ler o parâmetro no código, também criando a variável que armazenará o produto:
-Ex.: ProdutoInformaticaPage.jsx
+Ex.: FilmeDetalhesPage.jsx
 ```
   const { id } = useParams();
   const { produto, setProduto } = useState(null);
