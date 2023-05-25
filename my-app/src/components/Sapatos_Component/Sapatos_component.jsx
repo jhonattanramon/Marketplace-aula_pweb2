@@ -10,7 +10,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
   const [sapatosMasculino, setSapatosMasculino] = useState(0);
   const [ordem, setOrdem] = useState(null);
 
-  <select onChange={(evt) => setOrdem(evt.target.value)}>
+  <select onChange={(event) => setOrdem(event.target.value)}>
             <option value="">Ordenar por</option>
             <option value="nome">Nome</option>
             <option value="preco">Preço</option>
@@ -24,7 +24,7 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
         
         }, [ordem]);
 
-          
+  
 
 
 
@@ -66,7 +66,8 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
     <div className="title">
       <h1>Sapatos Masculino {contagem} </h1>
       <Link to = 'SapatosHome'>Ir para Sapatos Home</Link>
-    </div> 
+    </div>
+
     <div className="actions-container">
       <select>
           <option value="">Ordenar por</option>
@@ -120,3 +121,4 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
   );
 };
 export default Sapatos_component;
+  
