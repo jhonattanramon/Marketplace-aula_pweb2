@@ -7,10 +7,8 @@ import Sapatos_component from "./components/SapatosHome/SapatosHomeComponent";
 
 
 //component
-import FavoritosHome from "./components/Home/favoritos/FavoritosHome";
-import Favoritos_component from "./components/Favoritos_Component/Favoritos_component"; 
-import RoupasHome from "./components/RoupasHome/RoupasHome"
 
+import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
 //component
 
 import CarrosPageComponent from "./components/Carros_component/CarrosPageComponent";
