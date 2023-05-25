@@ -1,4 +1,4 @@
-# Roteiro
+  # Roteiro
 
 ## 1. CRIAR PROJETO - npx create-react-app
 ## 2. Criar componentes
@@ -252,6 +252,7 @@ Já no componente de Page que recebe, para recuperar as informações passando n
 ## Tarefa de useState, com select
 ### Layout/HTML/JSX
 
+# EXTRAS - tarefa do select (com ordernação ) UseState
 1. Criar componente html que vai ser usado
 ```
 <select>
@@ -292,6 +293,20 @@ useEffect(() => {
             return (a[ordem] < b[ordem]) ? -1 : (a[ordem] > b[ordem]) ? 1 : 0;
         });
 
+    e. Com a nova ordem, ordenar a lista
+
+    ``` jsx
+        useEffect(() => {
+            if(listaBrinquedos?.length >0){
+                const listaOrdenada = listaBrinquedos.sort(function(a,b) {
+                    return (a[ordem] < b[ordem]) ? -1 : (a[ordem] > b[ordem]) ? 1 : 0;
+                });
+
+                console.log(listaBrinquedos);
+                setListaBrinquedos([...listaOrdenada]);
+            }
+        }, [ordem]);
+    ```
         setListaBrinquedos([...listaOrdenada]);
     }
 }, [ordem]);
