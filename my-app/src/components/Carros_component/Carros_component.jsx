@@ -25,7 +25,7 @@ const Carros_component = () => {
   return(
       <div>
           <div>
-        
+          <h1>Óla maconha</h1>
           </div>
       </div>
   )
