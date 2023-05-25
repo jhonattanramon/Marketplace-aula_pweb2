@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link,json,useParams, useLocation  } from "react-router-dom";
+import {
+  Link,
+  json,
+  useParams,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import "./style.css";
 
 const FavoritosHome = () => {
+  const location = useLocation();
+  const navigation = useNavigate();
 
-
-
-
-    const location = useLocation()
-
-    const favoritos = location.state.fav
-
-
-
+  const favoritos = location.state.fav;
 
   const soma = favoritos.reduce(
     (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
@@ -24,8 +25,6 @@ const FavoritosHome = () => {
 
   console.log(filtrados.length);
 
-  
-
   const filtrarMenoresValores = () => {
     if (valorDigitado !== "") {
       const valoresFiltrados = favoritos.filter(
@@ -35,6 +34,10 @@ const FavoritosHome = () => {
     } else {
       setFiltrados(favoritos);
     }
+  };
+
+  const toFavoritosDetalhes = (id) => {
+    navigation(`/favoritosDetalhesPage/${id}`);
   };
 
   useEffect(() => {
@@ -48,9 +51,10 @@ const FavoritosHome = () => {
           display: "flex",
           flexDirection: "column",
           flex: 1,
-          background: "#282c34",
+          background: "#e2e8f0",
           height: "100%",
-          flexWrap:"wrap"
+          flexWrap: "wrap",
+          maxWidth: "100%",
         }}
       >
         <div
@@ -58,9 +62,7 @@ const FavoritosHome = () => {
             color: "white",
             textDecoration: "none",
           }}
-        >
-        
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",
@@ -90,31 +92,36 @@ const FavoritosHome = () => {
               onBlur={filtrarMenoresValores}
             />
             <img
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "20px", height: "20px", objectFit: "contain" }}
               src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
               alt=""
             />
           </div>
         </div>
-        <div style={{backgroundColor:"#282c34", display: "flex", gap: 10, flexDirection:'row' }}>
+        <div
+          style={{
+            backgroundColor: "#e2e8f0",
+            display: "flex",
+            gap: 10,
+            flexDirection: "column",
+          }}
+        >
           {filtrados.map(({ imagem, nome, descricao, preco, id }) => {
             return (
               <section
-                style={{
-                  background: "#282c34",
-                  fontSize: 14,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  color: "black",
-                  padding: 10,
-                }}
+                className="cardFavoritosHome"
                 key={id}
+                onClick={() => {
+                  toFavoritosDetalhes(id);
+                }}
               >
                 <div style={{ width: 200, height: 200 }}>
                   <img
-                    style={{ width: "100%", height: "100%" }}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
                     src={imagem}
                     alt=""
                   />
@@ -162,10 +169,7 @@ const FavoritosHome = () => {
             color: "white",
             textDecoration: "none",
           }}
-        >
-        
-       
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",
@@ -202,9 +206,15 @@ const FavoritosHome = () => {
           </div>
         </div>
 
-        <div style={{display: "flex", alignItems:'center', justifyContent:'center' }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <div>
-            <h1 style={{color: 'white'}}>FAVORITOS VAZIO...</h1>
+            <h1 style={{ color: "white" }}>FAVORITOS VAZIO...</h1>
           </div>
         </div>
       </section>

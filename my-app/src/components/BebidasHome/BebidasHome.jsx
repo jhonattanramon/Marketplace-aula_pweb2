@@ -10,7 +10,7 @@ const BebidasHome = (props) => {
 
   useEffect( () => {
     const load = async () => {
-      const resultJson = await fetch("https://dummyjson.com/products/category/motorcycle");
+      const resultJson = await fetch("https://dummyjson.com/products/category/groceries");
 
       const resultProduct = await resultJson.json();
       let resultFormatado = resultProduct.products.map(({ id, title, price, thumbnail, rating, stock }) => ({
@@ -44,7 +44,7 @@ const BebidasHome = (props) => {
         <Link to="/">Clique para ir a página inicial</Link>
 
       <div className="title">
-        <h1>Motocicleta</h1>
+        <h1>Groceries</h1>
 
         <div className="card">
 

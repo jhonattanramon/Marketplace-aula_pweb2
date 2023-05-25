@@ -45,7 +45,6 @@ const Bebidas_component = (props) => {
       <div className="title">
     
         <h1>GROCERIES</h1>
-        <Link to="/carros">Clique aqui e acesse carros</Link>
         <div>
           <select onChange={(event) => setOrdem(event.target.value)}>
             <option value="preco">Preço</option>
@@ -53,7 +52,7 @@ const Bebidas_component = (props) => {
             <option value="avaliacao">Avaliação</option>
           </select>
         </div>
-        <Link to="BebidasHome">Clique para ir a página de bebidas</Link>
+        <Link to="BebidasHome">Clique para ir a página de groceries</Link>
 
         <div className="card">
         {mantimentos.map((produto) => {

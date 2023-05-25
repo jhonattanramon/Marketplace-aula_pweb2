@@ -58,20 +58,12 @@ const RelogioPageComponent = (props) => {
                     <div className="cardInfo">
                       <h3>{relogio.descricao}</h3>
                       <h3>R${relogio.preco}</h3>
+                      <div>{relogio.avaliacao}</div>
+                      <div>{relogio.estoque}</div>
                     </div>
   
-                    <div className="fav">
-                      <button
-                        className="buttonFav"
-                        onClick={() => {
-                          props.onAddFavoritos(
-                            props.produtos[Number(relogio.id - 1)]
-                          );
-                        } }
-                      >
-                        FAVORITAR
-                      </button>
-                      <br />
+                    <div className="detalhes">
+                    <Link to={`/relogio/${relogio.id}`}>Detalhes</Link>
                     </div>
                   </div>
                 </section>
