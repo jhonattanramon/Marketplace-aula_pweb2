@@ -1,10 +1,7 @@
  import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import RoupasHome from "./components/RoupasHome/RoupasHome"
-
-
 import FRoupasHome from "./components/FRoupasHome";
 import BebidasHome from "./components/BebidasHome/BebidasHome"
 
