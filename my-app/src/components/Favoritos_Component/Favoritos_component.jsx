@@ -10,8 +10,8 @@ const Favoritos_component = ({ favoritos }) => {
 
   const navigate = useNavigate();
 
-  const toFavoritos = () => {
-    navigate("/favoritos", { state: { fav : favoritos}});
+  const toFavoritosHome = () => {
+    navigate("/favoritoshome", { state: { fav: favoritos } });
   };
 
   const [valorDigitado, setValorDigitado] = useState("");
@@ -28,6 +28,8 @@ const Favoritos_component = ({ favoritos }) => {
       setFiltrados(favoritos);
     }
   };
+
+  const DetalhesDoProduto = (produto) => {};
 
   useEffect(() => {
     filtrarMenoresValores();
@@ -49,10 +51,7 @@ const Favoritos_component = ({ favoritos }) => {
           textDecoration: "none",
         }}
       >
-      
-
-        <button onClick={() => toFavoritos()}>vamos por aqui</button>
-
+        <button onClick={() => toFavoritosHome()}>Favoritos Home</button>
       </div>
       <div
         style={{
@@ -103,12 +102,18 @@ const Favoritos_component = ({ favoritos }) => {
                 justifyContent: "space-around",
                 color: "black",
                 padding: 10,
+                borderRadius: 7,
+                maxWidth: 200,
               }}
               key={id}
             >
               <div style={{ width: 200, height: 200 }}>
                 <img
-                  style={{ width: "100%", height: "100%" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
                   src={imagem}
                   alt=""
                 />
@@ -132,6 +137,27 @@ const Favoritos_component = ({ favoritos }) => {
                     <span> R$</span>
                     {preco}
                   </strong>
+                </div>
+
+                <div
+                  style={{
+                    margin: 10,
+                  }}
+                >
+                  <Link
+                    style={{
+                      border: "none",
+                      padding: 7,
+                      margin: 10,
+                      fontSize: 12,
+                      textDecoration: "none",
+                      backgroundColor: "#e2e8f0",
+                      color: "black",
+                    }}
+                    to={`/favoritosDetalhesPage/${id}`}
+                  >
+                    Detalhes do Produto
+                  </Link>
                 </div>
               </div>
             </section>
