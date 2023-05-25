@@ -5,10 +5,14 @@ import { useEffect, useState } from "react";
 import Filmes_component from "../Filmes_Component/Filmes_component";
 import Jogos_component from "../Jogos_Component/Jogos_Component";
 import Roupas_component from "../Roupas_componet/Roupas_component";
+import FRoupas_Femininas_component from "../FRoupas_Femininas_component/Roupas_component";
 import Sapatos_component from "../Sapatos_Component/Sapatos_component";
 import Bebidas_component from "../Bebidas_Component/Bebidas_component";
 import Favoritos_component from "../Favoritos_Component/Favoritos_component";
 import Denuncia_component from "../Denuncia_component.s/Denuncia_component";
+import Smartphone_Component from "../Smartphones_Component/Smartphone_component";
+// import FavoritosHome from "../Home/favoritos/FavoritosHome";
+
 
 const Marketplace = () => {
   const [produtos, setProdutos] = useState([]);
@@ -103,6 +107,15 @@ const Marketplace = () => {
       </div>
 
       <div className="box2">
+        <FRoupas_Femininas_component
+          produtos={produtos}
+          PropFavoritos={favoritos}
+          onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+        />
+      </div>
+
+      <div className="box2">
         <Sapatos_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -113,6 +126,14 @@ const Marketplace = () => {
 
       <div className="box2">
         <Bebidas_component
+          produtos={produtos}
+          PropFavoritos={favoritos}
+          onAddDenuncia={addDenunciados}
+          onAddFavoritos={addFavoritos}
+        />
+      </div>
+      <div className="box2">
+        <Smartphone_Component
           produtos={produtos}
           PropFavoritos={favoritos}
           onAddDenuncia={addDenunciados}

@@ -1,4 +1,6 @@
-
+.card{
+    border-width: 1px solid red;
+}
 
 .img{
     align-items: center;
@@ -6,18 +8,18 @@
     height: 100%;
 }
 
-.caixa-sapato{
-    background:gray;
+/* .caixa-sapato{
     color:black;
     height:500;
     width: 100%;
     font-size: 10;
-}
+} */
 
-.divDescription{
+/* .divDescription{
     flex: 1;
     display:flex;
     justify-Content:center;
     align-Items:center;
     flex-Direction:column;
-}
+} */
+

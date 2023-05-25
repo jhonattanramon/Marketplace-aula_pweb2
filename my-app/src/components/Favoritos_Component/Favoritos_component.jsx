@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Filter_Component from "./Filter_component";
+import { Link, json, useNavigate } from "react-router-dom";
 
 const Favoritos_component = ({ favoritos }) => {
   const soma = favoritos.reduce(
@@ -7,14 +8,16 @@ const Favoritos_component = ({ favoritos }) => {
     0
   );
 
+  const navigate = useNavigate();
 
+  const toFavoritosHome = () => {
+    navigate("/favoritoshome", { state: { fav: favoritos } });
+  };
 
   const [valorDigitado, setValorDigitado] = useState("");
 
   const [filtrados, setFiltrados] = useState(favoritos);
 
-  const checkFilmes = () => {};
-    
   const filtrarMenoresValores = () => {
     if (valorDigitado !== "") {
       const valoresFiltrados = favoritos.filter(
@@ -26,8 +29,9 @@ const Favoritos_component = ({ favoritos }) => {
     }
   };
 
-  useEffect(() => {
+  const DetalhesDoProduto = (produto) => {};
 
+  useEffect(() => {
     filtrarMenoresValores();
   }, [favoritos]);
 
@@ -43,13 +47,27 @@ const Favoritos_component = ({ favoritos }) => {
     >
       <div
         style={{
+          color: "white",
+          textDecoration: "none",
+        }}
+      >
+        <button onClick={() => toFavoritosHome()}>Favoritos Home</button>
+      </div>
+      <div
+        style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <div style={{ textAlign: "center" }}> <h1> FAVORITOS</h1> </div>
-        <div style={{ position:'absolute', left:'80%',textAlign: "center" }}>  SOMA: {soma}</div>
+        <div style={{ textAlign: "center" }}>
+          {" "}
+          <h1> FAVORITOS</h1>{" "}
+        </div>
+        <div style={{ position: "absolute", left: "80%", textAlign: "center" }}>
+          {" "}
+          SOMA: {soma}
+        </div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
           <input
@@ -84,12 +102,18 @@ const Favoritos_component = ({ favoritos }) => {
                 justifyContent: "space-around",
                 color: "black",
                 padding: 10,
+                borderRadius: 7,
+                maxWidth: 200,
               }}
               key={id}
             >
               <div style={{ width: 200, height: 200 }}>
                 <img
-                  style={{ width: "100%", height: "100%" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
                   src={imagem}
                   alt=""
                 />
@@ -107,12 +131,33 @@ const Favoritos_component = ({ favoritos }) => {
                   textAlign: "center",
                 }}
               >
-                <div>{nome}</div>1
+                <div>{nome}</div>
                 <div>
                   <strong style={{ color: "green", fontSize: 12 }}>
                     <span> R$</span>
                     {preco}
                   </strong>
+                </div>
+
+                <div
+                  style={{
+                    margin: 10,
+                  }}
+                >
+                  <Link
+                    style={{
+                      border: "none",
+                      padding: 7,
+                      margin: 10,
+                      fontSize: 12,
+                      textDecoration: "none",
+                      backgroundColor: "#e2e8f0",
+                      color: "black",
+                    }}
+                    to={`/favoritosDetalhesPage/${id}`}
+                  >
+                    Detalhes do Produto
+                  </Link>
                 </div>
               </div>
             </section>

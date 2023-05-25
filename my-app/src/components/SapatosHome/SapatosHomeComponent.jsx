@@ -1,33 +1,13 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import "./sapatos.css";
+import {Link} from 'react-router-dom'
 
 const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
 
 //passo 1 Hook - React UseState
   const [contagem, setContagem] = useState(0);
   const [sapatosMasculino, setSapatosMasculino] = useState(0);
-  const [ordem, setOrdem] = useState(null);
-
-  <select onChange={(evt) => setOrdem(evt.target.value)}>
-            <option value="">Ordenar por</option>
-            <option value="nome">Nome</option>
-            <option value="preco">Preço</option>
-            <option value="avaliacao">Avaliaçâo</option>
-        </select>
-
-        useEffect(() => {
-
-            console.log('ordenar ' + ordem);
-           
-        
-        }, [ordem]);
-
-          
-
-
-
+  
   useEffect(() => {
     const load =  async () => {
       const result = await fetch('https://dummyjson.com/products/category/mens-shoes');
@@ -64,17 +44,9 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
     {/* passo 2  Hook - React UseState */}
     
     <div className="title">
-      <h1>Sapatos Masculino {contagem} </h1>
-      <Link to = 'SapatosHome'>Ir para Sapatos Home</Link>
+      <h1>SAPATOS {contagem} </h1>
+      <Link to="filmes  ">Clique para ir a página de filmes</Link>
     </div> 
-    <div className="actions-container">
-      <select>
-          <option value="">Ordenar por</option>
-          <option value="nome">Nome</option>
-          <option value="preco">Preço</option>
-          <option value="avaliacao">Avaliaçâo</option>
-      </select>
-    </div>
     <div className="card">
       {sapatosMasculino.map((produto) => {
         return (
@@ -94,7 +66,6 @@ const Sapatos_component = ({ produtos, onAddDenuncia, onAddFavoritos,}) => {
               </div>
 
               <div>
-                <Link to={`produto/${produto.id}`}>Ver detalhes</Link>
                 <button
                   onClick={() => {
                     // passo 3 Hook - React UseState
