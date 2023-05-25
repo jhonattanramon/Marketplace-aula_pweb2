@@ -19,6 +19,7 @@ import PaginaNaoEncontradaComponent from "./components/PaginaNaoEncontrada/Pagin
 import FilmeDetalhesPage from "./components/Filmes_Component/FilmeDetalhesPage";
 import LaptopPageComponent from "./components/Filmes_Component/LaptopPageComponent";
 import RelogioPageComponent from "./components/RelogioPageComponent/RelogioPageComponent";
+import RelogioDetalhes from "./components/RelogioPageComponent/RelogioDetalhes";
 
 //Homes
 import RoupasHome from "./components/RoupasHome/RoupasHome";
@@ -49,6 +50,11 @@ function App() {
 
       {/* params */}
       <Route path="/filme/:id" element={<FilmeDetalhesPage />} />
+      <Route
+        path="/favoritosDetalhesPage/:id"
+        element={<FavoritosDetalhesPage />}
+      />
+      <Route path="/relogio/:id" element={<RelogioDetalhes />} />
       <Route
         path="/favoritosDetalhesPage/:id"
         element={<FavoritosDetalhesPage />}
