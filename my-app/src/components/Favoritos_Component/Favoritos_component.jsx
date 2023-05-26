@@ -3,14 +3,17 @@ import Filter_Component from "./Filter_component";
 import { Link, json, useNavigate } from "react-router-dom";
 
 const Favoritos_component = ({ favoritos }) => {
-  const soma = favoritos.reduce(
-    (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
-    0
-  );
+  const soma = favoritos
+    .reduce(
+      (accumulator, currentFavorito) => accumulator + currentFavorito.preco,
+      0
+    )
+    .toFixed(2);
 
   const navigate = useNavigate();
 
   const toFavoritosHome = () => {
+    console.log("navigation");
     navigate("/favoritoshome", { state: { fav: favoritos } });
   };
 
@@ -50,26 +53,32 @@ const Favoritos_component = ({ favoritos }) => {
           color: "white",
           textDecoration: "none",
         }}
-      >
-        <button onClick={() => toFavoritosHome()}>Favoritos Home</button>
-      </div>
+      ></div>
       <div
         style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
         }}
       >
         <div style={{ textAlign: "center" }}>
-          {" "}
-          <h1> FAVORITOS</h1>{" "}
+          <h1> FAVORITOS</h1>
+          <a
+            onClick={() => {
+              toFavoritosHome();
+            }}
+          >
+            Ir para página favoritos
+          </a>
         </div>
-        <div style={{ position: "absolute", left: "80%", textAlign: "center" }}>
-          {" "}
-          SOMA: {soma}
-        </div>
-
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div
+          style={{
+            position: "absolute",
+            left: "75%",
+            top: "3%",
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
           <input
             placeholder="Filtrar"
             type="number"
@@ -84,6 +93,20 @@ const Favoritos_component = ({ favoritos }) => {
             src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-search-icon-image_1344447.jpg"
             alt=""
           />
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+            left: "0%",
+            textAlign: "center",
+            position: "absolute",
+            top: "3%",
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
+          SOMA: {soma}
         </div>
 
         <div style={{ position: "relative", left: "30%" }}></div>

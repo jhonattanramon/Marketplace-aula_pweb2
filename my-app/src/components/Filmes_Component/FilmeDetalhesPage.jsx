@@ -29,7 +29,14 @@ export default function FilmeDetalhesPage() {
   // }
 
   return (
-    <div>
+    <div
+      style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        background: "black",
+      }}
+    >
       {produto && (
         <section className="sectionContainer" key={produto.id}>
           <div>

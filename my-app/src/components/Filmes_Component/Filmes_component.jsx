@@ -49,29 +49,27 @@ const Filmes_component = (props) => {
   const setProps = props.setProps;
 
   return (
-
     <>
-
-    <div className="title">
+      <div className="title">
         {" "}
         <h1>LAPTOPS</h1>
         <Link to="filmes"> Ir para página de filmes</Link>
       </div>
 
       <div>
-      <label for="filtro">Filtrar:</label>
-          <select onChange={(event) => setOrdem(event.target.value)}>
-            <option value="avaliacao">Avaliação</option>
-            <option value="preco">Preço</option>
-            <option value="estoque">Estoque</option>
-          </select>
-      </div> 
+        <label for="filtro">Filtrar:</label>
+        <select onChange={(event) => setOrdem(event.target.value)}>
+          <option value="avaliacao">Avaliação</option>
+          <option value="preco">Preço</option>
+          <option value="estoque">Estoque</option>
+        </select>
+      </div>
 
       <div className="cardFilmes">
         {laptops.map((laptop) => {
           return (
             <section className="sectionContainer" key={laptop.id}>
-              <div className="img1" >
+              <div className="img1">
                 <img src={laptop.imagem} />
               </div>
 
@@ -84,14 +82,18 @@ const Filmes_component = (props) => {
                 <div>
                   <button
                     onClick={() => {
-                      props.onAddFavoritos(props.produtos[Number(laptop.id) - 1]);
+                      props.onAddFavoritos(
+                        props.produtos[Number(laptop.id) - 1]
+                      );
                     }}
                   >
                     Adicionar Favoritos
                   </button>
                   <button
                     onClick={() => {
-                      props.onAddDenuncia(props.produtos[Number(laptop.id) - 1]);
+                      props.onAddDenuncia(
+                        props.produtos[Number(laptop.id) - 1]
+                      );
                     }}
                   >
                     Denunciar
@@ -102,7 +104,7 @@ const Filmes_component = (props) => {
           );
         })}
       </div>
-
+      {/* 
       <div className="title">
         {" "}
         <h1>FILMES - <label> CONTAGEM: {contagem}</label></h1>
@@ -140,7 +142,7 @@ const Filmes_component = (props) => {
             </section>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 };

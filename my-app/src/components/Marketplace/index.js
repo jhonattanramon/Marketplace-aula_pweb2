@@ -1,6 +1,7 @@
 import "../../App.css";
 import React from "react";
 import { useEffect, useState } from "react";
+
 //component
 import Filmes_component from "../Filmes_Component/Filmes_component";
 import Jogos_component from "../Jogos_Component/Jogos_Component";
@@ -14,6 +15,8 @@ import Smartphone_Component from "../Smartphones_Component/Smartphone_component"
 import Carros_component from "../Carros_component/Carros_component";
 // import FavoritosHome from "../Home/favoritos/FavoritosHome";
 
+//css
+import "../../styles/stylesGlobal.css"
 
 const Marketplace = () => {
   const [produtos, setProdutos] = useState([]);
@@ -67,20 +70,18 @@ const Marketplace = () => {
 
   return (
     <div className="App">
-      <div className="box2">
-        <h1>{totalFavoritos}</h1>
-       
+      <div className="box">
         <Favoritos_component
           favoritos={favoritos}
           onAddFavoritos={addFavoritos}
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Denuncia_component denunciados={denunciados} />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Filmes_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -89,7 +90,7 @@ const Marketplace = () => {
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Jogos_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -98,7 +99,7 @@ const Marketplace = () => {
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Roupas_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -107,7 +108,7 @@ const Marketplace = () => {
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <FRoupas_Femininas_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -116,7 +117,7 @@ const Marketplace = () => {
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Sapatos_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -125,7 +126,7 @@ const Marketplace = () => {
         />
       </div>
 
-      <div className="box2">
+      <div className="box">
         <Bebidas_component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -133,7 +134,7 @@ const Marketplace = () => {
           onAddFavoritos={addFavoritos}
         />
       </div>
-      <div className="box2">
+      <div className="box">
         <Smartphone_Component
           produtos={produtos}
           PropFavoritos={favoritos}
@@ -141,7 +142,7 @@ const Marketplace = () => {
           onAddFavoritos={addFavoritos}
         />
       </div>
-      <div className="box2">
+      <div className="box">
         <Carros_component
           produtos={produtos}
           PropFavoritos={favoritos}

@@ -25,7 +25,7 @@ const Roupas_component = ({
   const [contagem, setContagem] = useState(0)
 
   const [produtos, setProdutos] = useState([])
-console.log(produtos);
+
 //  const [ordem, setOrdem] = useState('preco')
 
   useEffect (() => {

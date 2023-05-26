@@ -1,16 +1,14 @@
 import "./App.css";
 import React from "react";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 //component
 import Marketplace from "./components/Marketplace";
 import Sapatos_component from "./components/SapatosHome/SapatosHomeComponent";
 
-
 //component
 // import FavoritosHome from "./components/Home/favoritos/FavoritosHome";
-import Favoritos_component from "./components/Favoritos_Component/Favoritos_component"; 
+import Favoritos_component from "./components/Favoritos_Component/Favoritos_component";
 import RoupasHome from "./components/RoupasHome/RoupasHome";
-
 
 //component
 
@@ -39,17 +37,15 @@ function App() {
       <Route path="/" element={<Marketplace />} />
       <Route path="/carros" element={<CarrosPageComponent />} />
       <Route path="*" element={<PaginaNaoEncontradaComponent />} />
-      <Route path="RelogioPageComponent" element={<RelogioPageComponent />} />
+      <Route path="/RelogioPageComponent" element={<RelogioPageComponent />} />
       <Route path="/sapatos" element={<Sapatos_component />} />
-      <Route path="filmes" element={<LaptopPageComponent />} />
-
+      <Route path="/filmes" element={<LaptopPageComponent />} />
       {/*home */}
       <Route path="/RoupasHome" element={<RoupasHome />} />
-      <Route path="FRoupasHome" element={<FRoupasHome />} />
+      <Route path="/FRoupasHome" element={<FRoupasHome />} />
       <Route path="/BebidasHome" element={<BebidasHome />} />
       <Route path="/sapatosHome" element={<SapatosHomeComponent />} />
       <Route path="/favoritoshome" element={<FavoritosHome />} />
-
       {/* params */}
       <Route path="/filme/:id" element={<FilmeDetalhesPage />} />
       <Route
@@ -57,10 +53,7 @@ function App() {
         element={<FavoritosDetalhesPage />}
       />
       <Route path="/relogio/:id" element={<RelogioDetalhes />} />
-      <Route
-        path="/favoritosDetalhesPage/:id"
-        element={<FavoritosDetalhesPage />}
-      />
+      /
       <Route path="/produto/:id" element={<ProdutoHomeComponent />} />
     </Routes>
   );
