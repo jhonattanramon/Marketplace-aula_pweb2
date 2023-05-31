@@ -53,7 +53,7 @@ const Filmes_component = (props) => {
       <div className="title">
         {" "}
         <h1>LAPTOPS</h1>
-        <Link to="filmes"> Ir para página de filmes</Link>
+        <Link to="filmes"> Ir para página de laptops</Link>
       </div>
 
       <div>
