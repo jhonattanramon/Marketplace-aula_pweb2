@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./bebidas.css";
+import "./Groceries.css";
 import { Link } from "react-router-dom";
 
-const Bebidas_component = (props) => {
+const Groceries_component = (props) => {
 
   const [mantimentos, setMantimentos] = useState([]);
   const [ordem, setOrdem] = useState("preco");
@@ -42,9 +42,11 @@ const Bebidas_component = (props) => {
   
   return (
     <>
-      <div className="title">
+      <div>
     
         <h1>GROCERIES</h1>
+        <div>
+
         <div>
           <select onChange={(event) => setOrdem(event.target.value)}>
             <option value="preco">Preço</option>
@@ -54,35 +56,33 @@ const Bebidas_component = (props) => {
         </div>
         <Link to="BebidasHome">Clique para ir a página de groceries</Link>
 
-        <div className="card">
-        {mantimentos.map((produto) => {
+        <div>
+        {mantimentos.map((mantimento) => {
           return (
-            <section className="sectionContainer" key={produto.id}>
+            <section key={mantimento.id}>
               <div>
                 <img
-                  className="img"
-                  src={produto.imagem}
+                  src={mantimento.imagem}
                   alt="logo das marcas"
                 />
               </div>
-              <div className="divDescription">
+              <div>
                 <h3>
-                  {produto.nome} <br />
+                  {mantimento.nome} <br />
                 </h3>
 
-                <div className="cardInfo">
-                  <h3>{produto.descricao}</h3>
-                  <h3>R${produto.preco}</h3>
-                  <h3>{produto.avaliacao}</h3>
-                  <h3>{produto.estoque}</h3>
+                <div>
+                  <h3>{mantimento.descricao}</h3>
+                  <h3>R${mantimento.preco}</h3>
+                  <h3>{mantimento.avaliacao}</h3>
+                  <h3>{mantimento.estoque}</h3>
                 </div>
 
-              <div className="fav">
+              <div>
                 <button
-                  className="buttonFav"
                   onClick={() => {
                     props.onAddFavoritos(
-                      props.produtos[Number(produto.id - 1)]
+                      props.produtos[Number(mantimento.id - 1)]
                       );
                     }}
                     >
@@ -91,14 +91,14 @@ const Bebidas_component = (props) => {
                 <br />
               </div>
 
-              <div className="den">
+              <div>
                 <button 
                 onClick={ () => {
                   props.onAddDenuncia(
-                    props.produtos[Number(produto.id - 1)]
+                    props.produtos[Number(mantimento.id - 1)]
                   )
                 }}
-                className="buttonDen">DENUNCIAR</button>
+                >DENUNCIAR</button>
               </div>
                   </div>
             </section>
@@ -106,39 +106,39 @@ const Bebidas_component = (props) => {
         })}
       </div>
       </div>
+      </div>
 
-      <div className="title">
-      <h1>BEBIDA</h1>
+      <div>
+      <h1>Variedades</h1>
       
-      <div className="containerBebidas">
       
 
-        {props.produtos.map((bebida) => {
+        {props.produtos.map((variedades) => {
           return (
-            <section className="containerBebidas" key={bebida.id}>
+            <section key={variedades.id}>
               <div>
                 <img
-                  className="img"
-                  src={bebida.imagem}
+                  
+                  src={variedades.imagem}
                   alt="logo das marcas"
                 />
               </div>
-              <div className="cardH3">
+              <div>
                 <h3>
-                  {bebida.nome} <br />
+                  {variedades.nome} <br />
                 </h3>
 
-                <div className="cardInfo">
-                  <h3>{bebida.descricao}</h3>
-                  <h3>R${bebida.preco}</h3>
+                <div>
+                  <h3>{variedades.descricao}</h3>
+                  <h3>R${variedades.preco}</h3>
                 </div>
 
-              <div className="cardBbebidas1">
+              <div>
                 <button
-                  className="buttonFav"
+            
                   onClick={() => {
                     props.onAddFavoritos(
-                      props.produtos[Number(bebida.id - 1)]
+                      props.produtos[Number(variedades.id - 1)]
                       );
                     }}
                     >
@@ -147,23 +147,23 @@ const Bebidas_component = (props) => {
                 <br />
               </div>
 
-              <div className="den">
+              <div>
                 <button 
                 onClick={ () => {
                   props.onAddDenuncia(
-                    props.produtos[Number(bebida.id - 1)]
+                    props.produtos[Number(variedades.id - 1)]
                   )
                 }}
-                className="buttonDen">DENUNCIAR</button>
+                >DENUNCIAR</button>
               </div>
                   </div>
             </section>
           );
         })}
       </div>
-      </div>
+    
     </>
   );
 };
 
-export default Bebidas_component;
+export default Groceries_component;

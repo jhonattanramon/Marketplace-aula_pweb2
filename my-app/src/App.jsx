@@ -24,7 +24,7 @@ import RelogioDetalhes from "./components/RelogioPageComponent/RelogioDetalhes";
 
 //Homes
 import FRoupasHome from "./components/FRoupasHome";
-import BebidasHome from "./components/BebidasHome/BebidasHome";
+import GroceriesHome from "./components/GroceriesHome/GroceriesHome";
 import FavoritosHome from "./Home/favoritos/FavoritosHome";
 
 //Detalhes
@@ -43,7 +43,7 @@ function App() {
       {/*home */}
       <Route path="/RoupasHome" element={<RoupasHome />} />
       <Route path="/FRoupasHome" element={<FRoupasHome />} />
-      <Route path="/BebidasHome" element={<BebidasHome />} />
+      <Route path="/GroceriesHome" element={<GroceriesHome />} />
       <Route path="/sapatosHome" element={<SapatosHomeComponent />} />
       <Route path="/favoritoshome" element={<FavoritosHome />} />
       {/* params */}

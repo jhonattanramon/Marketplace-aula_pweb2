@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./bebidas.css";
+import "./Groceries.css";
 import {Link} from 'react-router-dom'
 
 
-const BebidasHome = (props) => {
+const GroceriesHome = (props) => {
 
   const [mantimentos, setMantimentos] = useState([]);
   const [ordem, setOrdem] = useState("preco");
@@ -49,23 +49,23 @@ const BebidasHome = (props) => {
         <div className="card">
 
 
-          {mantimentos.map((bebida) => {
+          {mantimentos.map((mantimento) => {
             return (
-              <section className="sectionContainer" key={bebida.id}>
+              <section className="sectionContainer" key={mantimento.id}>
                 <div>
                   <img
                     className="img"
-                    src={bebida.imagem}
+                    src={mantimento.imagem}
                     alt="logo das marcas" />
                 </div>
                 <div className="divDescription">
                   <h3>
-                    {bebida.nome} <br />
+                    {mantimento.nome} <br />
                   </h3>
 
                   <div className="cardInfo">
-                    <h3>{bebida.descricao}</h3>
-                    <h3>R${bebida.preco}</h3>
+                    <h3>{mantimento.descricao}</h3>
+                    <h3>R${mantimento.preco}</h3>
                   </div>
 
                   <div className="fav">
@@ -73,7 +73,7 @@ const BebidasHome = (props) => {
                       className="buttonFav"
                       onClick={() => {
                         props.onAddFavoritos(
-                          props.produtos[Number(bebida.id - 1)]
+                          props.produtos[Number(mantimento.id - 1)]
                         );
                       } }
                     >
@@ -91,4 +91,4 @@ const BebidasHome = (props) => {
   );
 };
 
-export default BebidasHome;
+export default GroceriesHome;
